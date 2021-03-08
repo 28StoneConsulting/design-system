@@ -44,7 +44,8 @@ export type StyledButtonProps = {
 };
 
 const StyledButton = styled.button<StyledButtonProps>`
-  border: 0;
+  border: 1;
+  border-color: red;
   border-radius: 3em;
   cursor: pointer;
   display: inline-block;

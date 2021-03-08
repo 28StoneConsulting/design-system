@@ -20,7 +20,7 @@
     "test": "react-scripts test",
     "lint": "eslint --fix {src,public}/**/*.{js,ts,jsx,tsx}",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public",
+    "build-storybook": "build-storybook",
     "chromatic": "npx chromatic --project-token 0c7ba7331293"
   },
   "eslintConfig": {

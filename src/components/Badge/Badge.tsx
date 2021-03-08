@@ -1,9 +1,11 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React, { ComponentProps } from 'react';
 import styled, { css } from 'styled-components';
-import { background, color, typography } from './shared/styles';
+import { background, color, typography } from '../../shared/styles';
 
-const BadgeWrapper = styled.div`
+export type BadgeStatus = 'positive' | 'negative' | 'neutral' | 'error' | 'warning';
+
+const BadgeWrapper = styled.div<{ status?: BadgeStatus }>`
   display: inline-block;
   vertical-align: top;
   font-size: 11px;
@@ -55,10 +57,14 @@ const BadgeWrapper = styled.div`
     `};
 `;
 
+export type BadgeProps = {
+  status?: BadgeStatus;
+} & ComponentProps<typeof BadgeWrapper>;
+
 /**
  * **Badges?!** We don't need no stinkin' badges!!
  */
-export function Badge({ ...props }) {
+export function Badge(props: BadgeProps) {
   return <BadgeWrapper {...props} />;
 }
 Badge.propTypes = {

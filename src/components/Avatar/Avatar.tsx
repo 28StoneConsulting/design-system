@@ -1,9 +1,9 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React, { ComponentProps } from 'react';
 import styled, { css } from 'styled-components';
-import { color, typography } from './shared/styles';
-import { glow } from './shared/animation';
-import { Icon } from './Icon';
+import { glow } from '../../shared/animation';
+import { color, typography } from '../../shared/styles';
+import { Icon } from '../Icon/Icon';
 
 export const sizes = {
   large: 40,
@@ -12,7 +12,9 @@ export const sizes = {
   tiny: 16,
 };
 
-const Image = styled.div`
+export type AvatarSize = keyof typeof sizes;
+
+const Image = styled.div<{ loading: boolean; size: AvatarSize; src: string }>`
   background: ${props => (!props.loading ? 'transparent' : color.light)};
   border-radius: 50%;
   display: inline-block;
@@ -75,35 +77,42 @@ const Image = styled.div`
 `;
 
 // prettier-ignore
-const Initial = styled.div`
+const Initial = styled.div<{ size: AvatarSize }>`
   color: ${color.lightest};
   text-align: center;
 
   font-size: ${typography.size.s2}px;
   line-height: ${sizes.medium}px;
 
-  ${props => props.size === "tiny" && css`
-    font-size: ${typography.size.s1 - 2}px;
+  ${props => props.size === 'tiny' && css`
+    font-size: ${Number(typography.size.s1) - 2}px;
     line-height: ${sizes.tiny}px;
   `}
 
-  ${props => props.size === "small" && css`
+  ${props => props.size === 'small' && css`
     font-size: ${typography.size.s1}px;
     line-height: ${sizes.small}px;
   `}
 
-  ${props => props.size === "large" && css`
+  ${props => props.size === 'large' && css`
     font-size: ${typography.size.s3}px;
     line-height: ${sizes.large}px;
   `}
 `;
+
+export type AvatarProps = {
+  username?: string;
+  loading?: boolean;
+  src?: string;
+  size?: AvatarSize;
+} & ComponentProps<typeof Image>;
 
 /**
  * Use an avatar for attributing actions or content to specific users.
  *   The user’s name should always be present when using Avatar – either printed beside
  *   the avatar or in a tooltip.
  **/
-export function Avatar({ loading, username, src, size, ...props }) {
+export function Avatar({ loading, username, src, size, ...props }: AvatarProps) {
   let avatarFigure = <Icon icon="useralt" />;
   const a11yProps = {};
 

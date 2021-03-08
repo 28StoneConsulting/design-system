@@ -65,7 +65,7 @@ export const bodyStyles = css`
   code,
   pre {
     font-family: ${typography.type.code};
-    font-size: ${typography.size.s2 - 1}px;
+    font-size: ${Number(typography.size.s2) - 1}px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }

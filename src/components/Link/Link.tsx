@@ -1,12 +1,22 @@
-import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
-import styled, { css } from 'styled-components';
 import { darken } from 'polished';
+import PropTypes from 'prop-types';
+import React, { ComponentProps, ComponentType, Fragment } from 'react';
+import styled, { css } from 'styled-components';
+import { color } from '../../shared/styles';
+import { Icon } from '../Icon/Icon';
 
-import { Icon } from './Icon';
-import { color } from './shared/styles';
+export type LinkProps = {
+  containsIcon?: boolean;
+  secondary?: boolean;
+  tertiary?: boolean;
+  nochrome?: boolean;
+  inverse?: boolean;
+  isButton?: boolean;
+  withArrow?: boolean;
+  LinkWrapper?: ComponentType;
+} & ComponentProps<typeof LinkInner>;
 
-const linkStyles = css`
+const linkStyles = css<LinkProps>`
   display: inline-block;
   transition: transform 150ms ease-out, color 150ms ease-out;
   text-decoration: none;
@@ -112,7 +122,7 @@ const linkStyles = css`
     `};
 `;
 
-const LinkInner = styled.span`
+const LinkInner = styled.span<{ withArrow?: boolean }>`
   ${props =>
     props.withArrow &&
     css`
@@ -147,7 +157,8 @@ const LinkButton = styled.button`
 const applyStyle = LinkWrapper => {
   return (
     LinkWrapper &&
-    styled(({ containsIcon, inverse, nochrome, secondary, tertiary, ...linkWrapperRest }) => (
+    styled(({ // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      containsIcon, inverse, nochrome, secondary, tertiary, ...linkWrapperRest }) => (
       <LinkWrapper {...linkWrapperRest} />
     ))`
       ${linkStyles};
@@ -158,7 +169,7 @@ const applyStyle = LinkWrapper => {
 /**
  * Links can contains text and/or icons. Be careful using only icons, you must provide a text alternative via aria-label for accessibility.
  */
-export function Link({ isButton, withArrow, LinkWrapper, children, ...rest }) {
+export function Link({ isButton, withArrow, LinkWrapper, children, ...rest }: LinkProps) {
   const content = (
     <Fragment>
       <LinkInner withArrow={withArrow}>
@@ -170,7 +181,7 @@ export function Link({ isButton, withArrow, LinkWrapper, children, ...rest }) {
 
   const StyledLinkWrapper = applyStyle(LinkWrapper);
 
-  let SelectedLink = LinkA;
+  let SelectedLink: ComponentType<LinkProps> = LinkA;
   if (LinkWrapper) {
     SelectedLink = StyledLinkWrapper;
   } else if (isButton) {

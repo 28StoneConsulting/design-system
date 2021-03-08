@@ -1,8 +1,7 @@
+import { action } from '@storybook/addon-actions';
 import React from 'react';
 import styled from 'styled-components';
-import { action } from '@storybook/addon-actions';
-
-import { Icon } from './Icon';
+import { Icon } from '../Icon/Icon';
 import { Link } from './Link';
 import { StoryLinkWrapper } from './StoryLinkWrapper';
 
@@ -14,13 +13,12 @@ const CustomLink = styled(Link)`
 
 const onLinkClick = action('onLinkClick');
 
-// eslint-disable-next-line import/no-anonymous-default-export
 export default {
   title: 'Design System/Link',
   component: Link,
 };
 
-export const All = (args) => (
+export const All = () => (
   <div>
     <Link href="https://learnstorybook.com">Default</Link>
     <br />

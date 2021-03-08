@@ -1,15 +1,14 @@
 import React, { Fragment } from 'react';
 import styled, { css } from 'styled-components';
-
+import { Icons, icons } from '../../shared/icons';
 import { Icon } from './Icon';
-import { icons } from './shared/icons';
 
 const Meta = styled.div`
   color: #666;
   font-size: 12px;
 `;
 
-const Item = styled.li`
+const Item = styled.li<{ minimal?: boolean }>`
   display: inline-flex;
   flex-direction: row;
   align-items: center;
@@ -48,18 +47,16 @@ const List = styled.ul`
   list-style: none;
 `;
 
-
-// eslint-disable-next-line import/no-anonymous-default-export
 export default {
   title: 'Design System/Icon',
   component: Icon,
 };
 
-export const Labels = (args) => (
+export const Labels = () => (
   <Fragment>
     There are {Object.keys(icons).length} icons
     <List>
-      {Object.keys(icons).map(key => (
+      {Object.keys(icons).map((key: keyof Icons) => (
         <Item key={key}>
           <Icon icon={key} aria-hidden />
           <Meta>{key}</Meta>
@@ -69,9 +66,9 @@ export const Labels = (args) => (
   </Fragment>
 );
 
-export const NoLabels = (args) => (
+export const NoLabels = () => (
   <List>
-    {Object.keys(icons).map(key => (
+    {Object.keys(icons).map((key: keyof Icons) => (
       <Item minimal key={key}>
         <Icon icon={key} aria-label={key} />
       </Item>
@@ -81,23 +78,23 @@ export const NoLabels = (args) => (
 
 NoLabels.storyName = 'no labels';
 
-export const Inline = (args) => (
+export const Inline = args => (
   <Fragment>
     this is an inline <Icon {...args} /> icon (default)
   </Fragment>
 );
-Inline.args={
-  icon:'facehappy',
-  "aria-label":'Happy face',
+Inline.args = {
+  icon: 'facehappy',
+  'aria-label': 'Happy face',
 };
 
-export const Block = (args) =>(
+export const Block = args => (
   <Fragment>
     this is a block <Icon {...args} /> icon
   </Fragment>
 );
-Block.args={
-  icon:'facehappy',
-  "aria-label":'Happy face',
-  block:true
+Block.args = {
+  icon: 'facehappy',
+  'aria-label': 'Happy face',
+  block: true,
 };

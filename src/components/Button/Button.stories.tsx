@@ -23,12 +23,27 @@ export const AllButtons = () => (
     <Button appearance="secondary" isLoading>
       SECONDARY
     </Button>
+    <Button appearance="primaryOutline" isLoading>
+      OUTLINE PRIMARY
+    </Button>
+    <Button appearance="secondaryOutline" isLoading>
+      OUTLINE SECONDARY
+    </Button>
+    <Button appearance="secondaryOutline" isDisabled>
+      DISABLED
+    </Button>
     <br />
     <Button appearance="primary" size="small">
       PRIMARY
     </Button>
     <Button appearance="secondary" size="small">
       SECONDARY
+    </Button>
+    <Button appearance="primaryOutline" size="small">
+      OUTLINE PRIMARY
+    </Button>
+    <Button appearance="secondaryOutline" size="small">
+      OUTLINE SECONDARY
     </Button>
     <Button appearance="primary" isDisabled size="small">
       DISABLED
@@ -40,7 +55,7 @@ AllButtons.storyName = 'All Buttons';
 
 export const AnchorWrapper = () => (
   <ButtonsWrapper>
-    <StoryLinkWrapper to="http://storybook.js.org">Original Link Wrapper</StoryLinkWrapper>
+    <StoryLinkWrapper to="http://28stone.com">Original Link Wrapper</StoryLinkWrapper>
     <br />
     <Button ButtonWrapper={StoryLinkWrapper} appearance="primary" to="" href="http://storybook.js.org">
       Primary

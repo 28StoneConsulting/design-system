@@ -119,7 +119,7 @@ export const SplitButton = () => {
   };
 
   return (
-    <Grid container direction="column" alignItems="left">
+    <Grid container direction="column" alignItems="flex-start">
       <Grid item xs={12}>
         <ButtonGroup variant="contained" color="primary" ref={anchorRef} aria-label="split button">
           <Button onClick={handleClick}>{options[selectedIndex]}</Button>

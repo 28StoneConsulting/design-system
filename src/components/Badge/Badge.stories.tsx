@@ -15,7 +15,7 @@ export const AllBadges = () => (
     <Badge status="error">Error</Badge>
     <Badge status="warning">Warning</Badge>
     <Badge status="positive">
-      <Icon icon="facehappy" inline />
+      <Icon icon="facehappy" />
       with icon
     </Badge>
   </AllBadgesWrapper>

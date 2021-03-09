@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import { action } from '@storybook/addon-actions';
-import React from 'react';
 import { Icon } from '../Icon/Icon';
 import { Link } from './Link';
 import { StoryLinkWrapper } from './StoryLinkWrapper';
@@ -59,7 +58,7 @@ export const All = () => (
       is actually a button
     </Link>
     <br />
-    <Link tertiary LinkWrapper={StoryLinkWrapper} href="http://storybook.js.org">
+    <Link tertiary to="" LinkWrapper={StoryLinkWrapper} href="http://storybook.js.org">
       has a LinkWrapper like GatsbyLink or NextLink
     </Link>
     <br />

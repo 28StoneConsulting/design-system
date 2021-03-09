@@ -2,11 +2,12 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { darken } from 'polished';
 import PropTypes from 'prop-types';
-import React, { ComponentProps, ComponentType, Fragment } from 'react';
+import { ComponentProps, ComponentType, Fragment } from 'react';
 import { color } from '../../shared/styles';
 import { Icon } from '../Icon/Icon';
 
-export type LinkProps = {
+export type LinkProps<P = unknown> = {
+  className?: string;
   href?: string;
   containsIcon?: boolean;
   secondary?: boolean;
@@ -15,8 +16,9 @@ export type LinkProps = {
   inverse?: boolean;
   isButton?: boolean;
   withArrow?: boolean;
-  LinkWrapper?: ComponentType;
-} & ComponentProps<typeof LinkInner>;
+  LinkWrapper?: ComponentType<P>;
+} & ComponentProps<typeof LinkInner> &
+  P;
 
 const linkStyles = (p: LinkProps) => css`
   display: inline-block;
@@ -165,7 +167,7 @@ const applyStyle = LinkWrapper => {
 /**
  * Links can contains text and/or icons. Be careful using only icons, you must provide a text alternative via aria-label for accessibility.
  */
-export function Link({ isButton, withArrow, LinkWrapper, children, ...rest }: LinkProps) {
+export function Link<P = null>({ isButton, withArrow, LinkWrapper, children, ...rest }: LinkProps<P>) {
   const content = (
     <Fragment>
       <LinkInner withArrow={withArrow}>
@@ -177,7 +179,8 @@ export function Link({ isButton, withArrow, LinkWrapper, children, ...rest }: Li
 
   const StyledLinkWrapper = applyStyle(LinkWrapper);
 
-  let SelectedLink: ComponentType<LinkProps> = LinkA;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  let SelectedLink: any = LinkA;
   if (LinkWrapper) {
     SelectedLink = StyledLinkWrapper;
   } else if (isButton) {
@@ -192,7 +195,6 @@ Link.propTypes = {
   children: PropTypes.node,
   withArrow: PropTypes.bool,
   containsIcon: PropTypes.bool,
-  LinkWrapper: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
   inverse: PropTypes.bool,
   nochrome: PropTypes.bool,
   secondary: PropTypes.bool,

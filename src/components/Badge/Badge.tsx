@@ -1,6 +1,7 @@
+import { css } from '@emotion/react';
+import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
-import React, { ComponentProps } from 'react';
-import styled, { css } from 'styled-components';
+import { ComponentProps } from 'react';
 import { background, color, typography } from '../../shared/styles';
 
 export type BadgeStatus = 'positive' | 'negative' | 'neutral' | 'error' | 'warning';

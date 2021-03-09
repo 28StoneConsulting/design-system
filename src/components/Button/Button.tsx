@@ -1,7 +1,8 @@
+import { css } from '@emotion/react';
+import styled from '@emotion/styled';
 import { darken, rgba } from 'polished';
 import PropTypes from 'prop-types';
 import React, { ComponentProps, ComponentType, Fragment } from 'react';
-import styled from 'styled-components';
 import { easing } from '../../shared/animation';
 import { color, typography } from '../../shared/styles';
 
@@ -23,8 +24,6 @@ const APPEARANCES = {
   PRIMARY_OUTLINE: 'primaryOutline',
   SECONDARY: 'secondary',
   SECONDARY_OUTLINE: 'secondaryOutline',
-  TERTIARY: 'tertiary',
-  OUTLINE: 'outline',
 };
 
 const SIZES = {
@@ -32,7 +31,7 @@ const SIZES = {
   MEDIUM: 'medium',
 };
 
-export type ButtonAppearance = 'primary' | 'primaryOutline' | 'secondary' | 'secondaryOutline' | 'tertiary' | 'outline';
+export type ButtonAppearance = 'primary' | 'primaryOutline' | 'secondary' | 'secondaryOutline';
 export type ButtonSize = 'small' | 'medium';
 
 export type StyledButtonProps = {
@@ -45,7 +44,6 @@ export type StyledButtonProps = {
 
 const StyledButton = styled.button<StyledButtonProps>`
   border: 0;
-  border-radius: 3em;
   cursor: pointer;
   display: inline-block;
   overflow: hidden;
@@ -59,16 +57,15 @@ const StyledButton = styled.button<StyledButtonProps>`
   white-space: nowrap;
   user-select: none;
   opacity: 1;
-  margin: 0;
   background: transparent;
 
-  font-size: ${props => (props.size === SIZES.SMALL ? typography.size.s1 : typography.size.s2)}px;
-  font-weight: ${typography.weight.extrabold};
+  font-size: ${p => (p.size === SIZES.SMALL ? typography.size.s1 : typography.size.s2)}px;
+  font-weight: ${typography.weight.bold};
   line-height: 1;
 
-  ${props =>
-    !props.isLoading &&
-    `
+  ${p =>
+    !p.isLoading &&
+    css`
       &:hover {
         transform: translate3d(0, -2px, 0);
         box-shadow: rgba(0, 0, 0, 0.2) 0 2px 6px 0;
@@ -79,11 +76,11 @@ const StyledButton = styled.button<StyledButtonProps>`
       }
 
       &:focus {
-        box-shadow: ${rgba(color.primary, 0.4)} 0 1px 9px 2px;
+        box-shadow: ${rgba(p.theme.palette.primary.main, 0.4)} 0 1px 9px 2px;
       }
 
       &:focus:hover {
-        box-shadow: ${rgba(color.primary, 0.2)} 0 8px 18px 0px;
+        box-shadow: ${rgba(p.theme.palette.primary.main, 0.2)} 0 8px 18px 0px;
       }
     `}
 
@@ -111,7 +108,7 @@ const StyledButton = styled.button<StyledButtonProps>`
 
   ${props =>
     props.disabled &&
-    `
+    css`
       cursor: not-allowed !important;
       opacity: 0.5;
       &:hover {
@@ -121,7 +118,7 @@ const StyledButton = styled.button<StyledButtonProps>`
 
   ${props =>
     props.isUnclickable &&
-    `
+    css`
       cursor: default !important;
       pointer-events: none;
       &:hover {
@@ -131,7 +128,7 @@ const StyledButton = styled.button<StyledButtonProps>`
 
   ${props =>
     props.isLoading &&
-    `
+    css`
       cursor: progress !important;
       opacity: 0.7;
 
@@ -151,169 +148,113 @@ const StyledButton = styled.button<StyledButtonProps>`
       }
     `}
 
-  ${props =>
-    props.containsIcon &&
-    `
+  ${p =>
+    p.containsIcon &&
+    css`
       svg {
         display: block;
         margin: 0;
       }
-      padding: ${props.size === SIZES.SMALL ? '7' : '12'}px;
+      padding: ${p.size === SIZES.SMALL ? '7' : '12'}px;
     `}
 
-  ${props =>
-    props.appearance === APPEARANCES.PRIMARY &&
-    `
-      background: ${color.primary};
+  ${p =>
+    p.appearance === APPEARANCES.PRIMARY &&
+    css`
+      background: ${p.theme.palette.primary.main};
       color: ${color.lightest};
 
-      ${
-        !props.isLoading &&
-        `
-          &:hover {
-            background: ${darken(0.05, color.primary)};
-          }
-          &:active {
-            box-shadow: rgba(0, 0, 0, 0.1) 0 0 0 3em inset;
-          }
-          &:focus {
-            box-shadow: ${rgba(color.primary, 0.4)} 0 1px 9px 2px;
-          }
-          &:focus:hover {
-            box-shadow: ${rgba(color.primary, 0.2)} 0 8px 18px 0px;
-          }
-        `
-      }
+      ${!p.isLoading &&
+      css`
+        &:hover {
+          background: ${darken(0.05, p.theme.palette.primary.main)};
+        }
+        &:active {
+          box-shadow: rgba(0, 0, 0, 0.1) 0 0 0 3em inset;
+        }
+        &:focus {
+          box-shadow: ${rgba(p.theme.palette.primary.main, 0.4)} 0 1px 9px 2px;
+        }
+        &:focus:hover {
+          box-shadow: ${rgba(p.theme.palette.primary.main, 0.2)} 0 8px 18px 0px;
+        }
+      `}
     `}
 
-  ${props =>
-    props.appearance === APPEARANCES.SECONDARY &&
-    `
-      background: ${color.secondary};
+  ${p =>
+    p.appearance === APPEARANCES.SECONDARY &&
+    css`
+      background: ${p.theme.palette.secondary.main};
       color: ${color.lightest};
 
-      ${
-        !props.isLoading &&
-        `
-          &:hover {
-            background: ${darken(0.05, color.secondary)};
-          }
-          &:active {
-            box-shadow: rgba(0, 0, 0, 0.1) 0 0 0 3em inset;
-          }
-          &:focus {
-            box-shadow: ${rgba(color.secondary, 0.4)} 0 1px 9px 2px;
-          }
-          &:focus:hover {
-            box-shadow: ${rgba(color.secondary, 0.2)} 0 8px 18px 0px;
-          }
-        `
-      }
+      ${!p.isLoading &&
+      css`
+        &:hover {
+          background: ${darken(0.05, p.theme.palette.secondary.main)};
+        }
+        &:active {
+          box-shadow: rgba(0, 0, 0, 0.1) 0 0 0 3em inset;
+        }
+        &:focus {
+          box-shadow: ${rgba(p.theme.palette.secondary.main, 0.4)} 0 1px 9px 2px;
+        }
+        &:focus:hover {
+          box-shadow: ${rgba(p.theme.palette.secondary.main, 0.2)} 0 8px 18px 0px;
+        }
+      `}
     `}
 
-  ${props =>
-    props.appearance === APPEARANCES.TERTIARY &&
-    `
-      background: ${color.tertiary};
-      color: ${color.darkest};
+  ${p =>
+    p.appearance === APPEARANCES.PRIMARY_OUTLINE &&
+    css`
+      box-shadow: ${p.theme.palette.primary.main} 0 0 0 1px inset;
+      color: ${p.theme.palette.primary.main};
 
-      ${
-        !props.isLoading &&
-        `
-          &:hover {
-            background: ${darken(0.05, color.tertiary)};
-          }
-          &:active {
-            box-shadow: rgba(0, 0, 0, 0.1) 0 0 0 3em inset;
-          }
-          &:focus {
-            box-shadow: ${rgba(color.tertiary, 0.4)} 0 1px 9px 2px;
-          }
-          &:focus:hover {
-            box-shadow: ${rgba(color.tertiary, 0.2)} 0 8px 18px 0px;
-          }
-        `
+      &:hover {
+        box-shadow: ${p.theme.palette.primary.main} 0 0 0 1px inset;
+        background: transparent;
       }
-    `}
 
-  ${props =>
-    props.appearance === APPEARANCES.OUTLINE &&
-    `
-      box-shadow: ${color.medium} 0 0 0 1px inset;
-      color: ${color.dark};
-      background: transparent;
-
-      ${
-        !props.isLoading &&
-        `
-          &:hover {
-            box-shadow: ${color.mediumdark} 0 0 0 1px inset;
-          }
-
-          &:active {
-            background: ${color.medium};
-            box-shadow: ${color.medium} 0 0 0 1px inset;
-            color: ${color.darkest};
-          }
-          &:focus {
-            box-shadow: ${color.medium} 0 0 0 1px inset, ${rgba(color.secondary, 0.4)} 0 1px 9px 2px;
-          }
-          &:focus:hover {
-            box-shadow: ${color.medium} 0 0 0 1px inset, ${rgba(color.secondary, 0.2)} 0 8px 18px 0px;
-          }
-        `
-      };
+      &:active {
+        background: ${p.theme.palette.primary.main};
+        box-shadow: ${p.theme.palette.primary.main} 0 0 0 1px inset;
+        color: ${color.lightest};
+      }
+      &:focus {
+        box-shadow: ${p.theme.palette.primary.main} 0 0 0 1px inset,
+          ${rgba(p.theme.palette.primary.main, 0.4)} 0 1px 9px 2px;
+      }
+      &:focus:hover {
+        box-shadow: ${p.theme.palette.primary.main} 0 0 0 1px inset,
+          ${rgba(p.theme.palette.primary.main, 0.2)} 0 8px 18px 0px;
+      }
     `};
 
-  ${props =>
-    props.appearance === APPEARANCES.PRIMARY_OUTLINE &&
-    `
-        box-shadow: ${color.primary} 0 0 0 1px inset;
-        color: ${color.primary};
+  ${p =>
+    p.appearance === APPEARANCES.SECONDARY_OUTLINE &&
+    css`
+      box-shadow: ${p.theme.palette.secondary.main} 0 0 0 1px inset;
+      color: ${p.theme.palette.secondary.main};
 
-        &:hover {
-          box-shadow: ${color.primary} 0 0 0 1px inset;
-          background: transparent;
-        }
+      &:hover {
+        box-shadow: ${p.theme.palette.secondary.main} 0 0 0 1px inset;
+        background: transparent;
+      }
 
-        &:active {
-          background: ${color.primary};
-          box-shadow: ${color.primary} 0 0 0 1px inset;
-          color: ${color.lightest};
-        }
-        &:focus {
-          box-shadow: ${color.primary} 0 0 0 1px inset, ${rgba(color.primary, 0.4)} 0 1px 9px 2px;
-        }
-        &:focus:hover {
-          box-shadow: ${color.primary} 0 0 0 1px inset, ${rgba(color.primary, 0.2)} 0 8px 18px 0px;
-        }
-      `};
-
-  ${props =>
-    props.appearance === APPEARANCES.SECONDARY_OUTLINE &&
-    `
-        box-shadow: ${color.secondary} 0 0 0 1px inset;
-        color: ${color.secondary};
-
-        &:hover {
-          box-shadow: ${color.secondary} 0 0 0 1px inset;
-          background: transparent;
-        }
-
-        &:active {
-          background: ${color.secondary};
-          box-shadow: ${color.secondary} 0 0 0 1px inset;
-          color: ${color.lightest};
-        }
-        &:focus {
-          box-shadow: ${color.secondary} 0 0 0 1px inset,
-            ${rgba(color.secondary, 0.4)} 0 1px 9px 2px;
-        }
-        &:focus:hover {
-          box-shadow: ${color.secondary} 0 0 0 1px inset,
-            ${rgba(color.secondary, 0.2)} 0 8px 18px 0px;
-        }
-      `};
+      &:active {
+        background: ${p.theme.palette.secondary.main};
+        box-shadow: ${p.theme.palette.secondary.main} 0 0 0 1px inset;
+        color: ${color.lightest};
+      }
+      &:focus {
+        box-shadow: ${p.theme.palette.secondary.main} 0 0 0 1px inset,
+          ${rgba(p.theme.palette.secondary.main, 0.4)} 0 1px 9px 2px;
+      }
+      &:focus:hover {
+        box-shadow: ${p.theme.palette.secondary.main} 0 0 0 1px inset,
+          ${rgba(p.theme.palette.secondary.main, 0.2)} 0 8px 18px 0px;
+      }
+    `};
 `;
 
 const ButtonLink = StyledButton.withComponent('a');
@@ -328,31 +269,41 @@ const applyStyle = ButtonWrapper => {
   );
 };
 
-export type ButtonProps = {
-  isDisabled?: boolean;
-  loadingText?: string;
-  isLink?: boolean;
-  ButtonWrapper?: ComponentType;
-} & StyledButtonProps &
-  ComponentProps<typeof StyledButton>;
+export type ButtonProps<P = null> = StyledButtonProps &
+  ComponentProps<typeof StyledButton> &
+  P & {
+    isDisabled?: boolean;
+    loadingText?: string;
+    isLink?: boolean;
+    ButtonWrapper?: ComponentType<P>;
+  };
 
-export function Button({ isDisabled, isLoading, loadingText, isLink, children, ButtonWrapper, ...props }: ButtonProps) {
+export function Button<P = null>({
+  isDisabled,
+  isLoading,
+  loadingText,
+  isLink,
+  children,
+  ButtonWrapper,
+  ...props
+}: ButtonProps<P>) {
   const buttonInner = (
     <Fragment>
       <Text>{children}</Text>
-      {isLoading && <Loading>{loadingText || 'Loading...'}</Loading>}
+      {isLoading && <Loading>{loadingText || 'LOADING...'}</Loading>}
     </Fragment>
   );
 
-  const StyledButtonWrapper = React.useMemo(() => applyStyle(ButtonWrapper), [
+  const StyledButtonWrapper = (React.useMemo(() => applyStyle(ButtonWrapper), [
     ButtonWrapper,
-  ]) as ComponentType<ButtonProps>;
+  ]) as unknown) as ComponentType<ButtonProps<P>>;
 
-  let SelectedButton: ComponentType<ButtonProps> = StyledButton;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  let SelectedButton: any = (StyledButton as unknown) as ComponentType<ButtonProps<P>>;
   if (ButtonWrapper) {
     SelectedButton = StyledButtonWrapper;
   } else if (isLink) {
-    SelectedButton = ButtonLink;
+    SelectedButton = (ButtonLink as unknown) as ComponentType<ButtonProps<P>>;
   }
 
   return (
@@ -391,7 +342,7 @@ Button.defaultProps = {
   isLoading: false,
   loadingText: null,
   isLink: false,
-  appearance: APPEARANCES.TERTIARY,
+  appearance: APPEARANCES.PRIMARY,
   isDisabled: false,
   isUnclickable: false,
   containsIcon: false,

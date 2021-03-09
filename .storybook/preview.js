@@ -1,17 +1,19 @@
-import React from 'react';
+import { addDecorator } from '@storybook/react';
+import customTheme from './theme';
+import withTheme from './decorators/with-theme';
 
-import { GlobalStyle } from '../src/shared/global';
-
-// Global decorator to apply the styles to all stories
-export const decorators = [
-  Story => (
-    <>
-      <GlobalStyle />
-      <Story />
-    </>
-  ),
-];
-
+// or global addParameters
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
-}
+  docs: {
+    theme: customTheme,
+  },
+  backgrounds: {
+    disable: true,
+  },
+  viewport: {
+    disable: true,
+  },
+};
+
+addDecorator(withTheme);

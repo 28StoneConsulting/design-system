@@ -1,5 +1,5 @@
+import styled from '@emotion/styled';
 import React, { ComponentProps } from 'react';
-import styled from 'styled-components';
 import { Icons, icons } from '../../shared/icons';
 
 const Svg = styled.svg<{ block?: boolean }>`

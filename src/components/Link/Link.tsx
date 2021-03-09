@@ -1,11 +1,13 @@
+import { css } from '@emotion/react';
+import styled from '@emotion/styled';
 import { darken } from 'polished';
 import PropTypes from 'prop-types';
 import React, { ComponentProps, ComponentType, Fragment } from 'react';
-import styled, { css } from 'styled-components';
 import { color } from '../../shared/styles';
 import { Icon } from '../Icon/Icon';
 
 export type LinkProps = {
+  href?: string;
   containsIcon?: boolean;
   secondary?: boolean;
   tertiary?: boolean;
@@ -16,7 +18,7 @@ export type LinkProps = {
   LinkWrapper?: ComponentType;
 } & ComponentProps<typeof LinkInner>;
 
-const linkStyles = css<LinkProps>`
+const linkStyles = (p: LinkProps) => css`
   display: inline-block;
   transition: transform 150ms ease-out, color 150ms ease-out;
   text-decoration: none;
@@ -44,82 +46,76 @@ const linkStyles = css<LinkProps>`
     margin-right: 0.4em;
   }
 
-  ${props =>
-    props.containsIcon &&
-    css`
-      svg {
-        height: 1em;
-        width: 1em;
-        vertical-align: middle;
-        position: relative;
-        bottom: 0;
-        margin-right: 0;
-      }
-    `};
+  ${p.containsIcon &&
+  css`
+    svg {
+      height: 1em;
+      width: 1em;
+      vertical-align: middle;
+      position: relative;
+      bottom: 0;
+      margin-right: 0;
+    }
+  `};
 
-  ${props =>
-    props.secondary &&
-    css`
-      color: ${color.mediumdark};
+  ${p.secondary &&
+  css`
+    color: ${color.mediumdark};
 
-      &:hover {
-        color: ${color.dark};
-      }
-
-      &:active {
-        color: ${color.darker};
-      }
-    `};
-
-  ${props =>
-    props.tertiary &&
-    css`
+    &:hover {
       color: ${color.dark};
+    }
 
-      &:hover {
-        color: ${color.darkest};
-      }
+    &:active {
+      color: ${color.darker};
+    }
+  `};
 
-      &:active {
-        color: ${color.mediumdark};
-      }
-    `};
+  ${p.tertiary &&
+  css`
+    color: ${color.dark};
 
-  ${props =>
-    props.nochrome &&
-    css`
+    &:hover {
+      color: ${color.darkest};
+    }
+
+    &:active {
+      color: ${color.mediumdark};
+    }
+  `};
+
+  ${p.nochrome &&
+  css`
+    color: inherit;
+
+    &:hover,
+    &:active {
       color: inherit;
+      text-decoration: underline;
+    }
+  `};
 
-      &:hover,
-      &:active {
-        color: inherit;
-        text-decoration: underline;
-      }
-    `};
+  ${p.inverse &&
+  css`
+    color: ${color.lightest};
 
-  ${props =>
-    props.inverse &&
-    css`
-      color: ${color.lightest};
+    &:hover {
+      color: ${color.lighter};
+    }
 
-      &:hover {
-        color: ${color.lighter};
-      }
+    &:active {
+      color: ${color.light};
+    }
+  `};
 
-      &:active {
-        color: ${color.light};
-      }
-    `};
-
-  ${props =>
-    props.isButton &&
-    css`
-      border: 0;
-      border-radius: 0;
-      background: none;
-      padding: 0;
-      font-size: inherit;
-    `};
+  ${p.isButton &&
+  css`
+    border: 0;
+    border-radius: 0;
+    background: none;
+    padding: 0;
+    font-size: inherit;
+  `};
 `;
 
 const LinkInner = styled.span<{ withArrow?: boolean }>`

@@ -1,5 +1,6 @@
+import { css } from '@emotion/react';
+import styled from '@emotion/styled';
 import React, { Fragment } from 'react';
-import styled, { css } from 'styled-components';
 import { Icons, icons } from '../../shared/icons';
 import { Icon } from './Icon';
 

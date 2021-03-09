@@ -1,4 +1,4 @@
-import React from 'react';
+import styled from '@emotion/styled';
 import { Icon } from '../Icon/Icon';
 import { Badge } from './Badge';
 
@@ -7,25 +7,19 @@ export default {
   component: Badge,
 };
 
-export const AllBadges = args => (
-  <div>
+export const AllBadges = () => (
+  <AllBadgesWrapper>
     <Badge status="positive">Positive</Badge>
     <Badge status="negative">Negative</Badge>
     <Badge status="neutral">Neutral</Badge>
     <Badge status="error">Error</Badge>
     <Badge status="warning">Warning</Badge>
     <Badge status="positive">
-      <Icon {...args} />
+      <Icon icon="facehappy" inline />
       with icon
     </Badge>
-  </div>
+  </AllBadgesWrapper>
 );
-AllBadges.args = {
-  icon: 'facehappy',
-  inline: true,
-};
-
-AllBadges.storyName = 'all badges';
 
 export const Positive = () => <Badge status="positive">Positive</Badge>;
 export const Negative = () => <Badge status="negative">Negative</Badge>;
@@ -39,10 +33,15 @@ export const WithIcon = args => (
     with icon
   </Badge>
 );
+
 WithIcon.args = {
   status: 'warning',
   icon: 'check',
   inline: true,
 };
 
-WithIcon.storyName = 'with icon';
+const AllBadgesWrapper = styled.div`
+  & > * {
+    margin-right: ${p => p.theme.spacing(1)}px;
+  }
+`;

@@ -1,6 +1,6 @@
+import styled from '@emotion/styled';
 import { action } from '@storybook/addon-actions';
 import React from 'react';
-import styled from 'styled-components';
 import { Icon } from '../Icon/Icon';
 import { Link } from './Link';
 import { StoryLinkWrapper } from './StoryLinkWrapper';

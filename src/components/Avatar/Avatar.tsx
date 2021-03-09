@@ -1,6 +1,7 @@
+import { css } from '@emotion/react';
+import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
-import React, { ComponentProps } from 'react';
-import styled, { css } from 'styled-components';
+import { ComponentProps } from 'react';
 import { glow } from '../../shared/animation';
 import { color, typography } from '../../shared/styles';
 import { Icon } from '../Icon/Icon';
@@ -15,7 +16,7 @@ export const sizes = {
 export type AvatarSize = keyof typeof sizes;
 
 const Image = styled.div<{ loading: boolean; size: AvatarSize; src: string }>`
-  background: ${props => (!props.loading ? 'transparent' : color.light)};
+  background: ${p => (!p.loading ? 'transparent' : color.light)};
   border-radius: 50%;
   display: inline-block;
   vertical-align: top;
@@ -26,34 +27,34 @@ const Image = styled.div<{ loading: boolean; size: AvatarSize; src: string }>`
   width: ${sizes.medium}px;
   line-height: ${sizes.medium}px;
 
-  ${props =>
-    props.size === 'tiny' &&
+  ${p =>
+    p.size === 'tiny' &&
     css`
       height: ${sizes.tiny}px;
       width: ${sizes.tiny}px;
       line-height: ${sizes.tiny}px;
     `}
 
-  ${props =>
-    props.size === 'small' &&
+  ${p =>
+    p.size === 'small' &&
     css`
       height: ${sizes.small}px;
       width: ${sizes.small}px;
       line-height: ${sizes.small}px;
     `}
 
-  ${props =>
-    props.size === 'large' &&
+  ${p =>
+    p.size === 'large' &&
     css`
       height: ${sizes.large}px;
       width: ${sizes.large}px;
       line-height: ${sizes.large}px;
     `}
 
-  ${props =>
-    !props.src &&
+  ${p =>
+    !p.src &&
     css`
-      background: ${!props.loading && '#37D5D3'};
+      background: ${!p.loading && '#37D5D3'};
     `}
 
   img {

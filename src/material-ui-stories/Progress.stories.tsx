@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import CircularProgress, { CircularProgressProps } from '@material-ui/core/CircularProgress';
-import LinearProgress from '@material-ui/core/LinearProgress';
+import LinearProgress, { LinearProgressProps } from '@material-ui/core/LinearProgress';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import { green } from '@material-ui/core/colors';
@@ -236,6 +236,7 @@ export const LinearBuffer = () => {
         setProgress(progress + diff);
         setBuffer(progress + diff + diff2);
       }
+      return true;
     };
   });
 

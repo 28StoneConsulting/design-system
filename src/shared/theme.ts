@@ -1,15 +1,76 @@
 import { createMuiTheme } from '@material-ui/core/styles';
-
 declare module '@material-ui/core/styles/createPalette' {
   interface Palette {
     mainBackgroundColor: React.CSSProperties['background'];
     panelBackgroundColor: React.CSSProperties['background'];
     subPanelBackgroundColor: React.CSSProperties['background'];
+    errorBackground: PaletteColor;
+    warningBackground: PaletteColor;
+    infoBackground: PaletteColor;
+    successBackground: PaletteColor;
+    monochrome: {
+      lightest: React.CSSProperties['color'];
+      lighter: React.CSSProperties['color'];
+      light: React.CSSProperties['color'];
+      mediumlight: React.CSSProperties['color'];
+      medium: React.CSSProperties['color'];
+      mediumdark: React.CSSProperties['color'];
+      dark: React.CSSProperties['color'];
+      darker: React.CSSProperties['color'];
+      darkest: React.CSSProperties['color'];
+    };
   }
   interface PaletteOptions {
     mainBackgroundColor: React.CSSProperties['background'];
     panelBackgroundColor: React.CSSProperties['background'];
     subPanelBackgroundColor: React.CSSProperties['background'];
+    errorBackground: PaletteColorOptions;
+    warningBackground: PaletteColorOptions;
+    infoBackground: PaletteColorOptions;
+    successBackground: PaletteColorOptions;
+    monochrome: {
+      lightest: React.CSSProperties['color'];
+      lighter: React.CSSProperties['color'];
+      light: React.CSSProperties['color'];
+      mediumlight: React.CSSProperties['color'];
+      medium: React.CSSProperties['color'];
+      mediumdark: React.CSSProperties['color'];
+      dark: React.CSSProperties['color'];
+      darker: React.CSSProperties['color'];
+      darkest: React.CSSProperties['color'];
+    };
+  }
+}
+
+declare module '@material-ui/core/styles/createTypography' {
+  interface Typography {
+    size: {
+      s1: string;
+      s2: string;
+      s3: string;
+      m1: string;
+      m2: string;
+      m3: string;
+      l1: string;
+      l2: string;
+      l3: string;
+      code: string;
+    };
+  }
+
+  interface TypographyOptions {
+    size: {
+      s1: string;
+      s2: string;
+      s3: string;
+      m1: string;
+      m2: string;
+      m3: string;
+      l1: string;
+      l2: string;
+      l3: string;
+      code: string;
+    };
   }
 }
 
@@ -36,6 +97,18 @@ const theme = createMuiTheme({
     h5: {
       fontWeight: 'bold',
     },
+    size: {
+      s1: '12',
+      s2: '14',
+      s3: '16',
+      m1: '20',
+      m2: '24',
+      m3: '28',
+      l1: '32',
+      l2: '40',
+      l3: '48',
+      code: '90',
+    },
   },
   palette: {
     primary: {
@@ -43,6 +116,41 @@ const theme = createMuiTheme({
     },
     secondary: {
       main: '#408C8C',
+    },
+    error: {
+      main: '#FF4400',
+    },
+    errorBackground: {
+      main: '#FEDED2',
+    },
+    warning: {
+      main: '#E69D00',
+    },
+    warningBackground: {
+      main: '#FFF5CF',
+    },
+    info: {
+      main: '#666666',
+    },
+    infoBackground: {
+      main: '#DDDDDD',
+    },
+    success: {
+      main: '#66BF3C',
+    },
+    successBackground: {
+      main: '#E1FFD4',
+    },
+    monochrome: {
+      lightest: '#FFFFFF',
+      lighter: '#F8F8F8',
+      light: '#F3F3F3',
+      mediumlight: '#EEEEEE',
+      medium: '#DDDDDD',
+      mediumdark: '#999999',
+      dark: '#666666',
+      darker: '#444444',
+      darkest: '#333333',
     },
     background: {
       paper: '#fff',

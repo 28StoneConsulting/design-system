@@ -9,22 +9,20 @@ export default {
 
 export const AllBadges = () => (
   <AllBadgesWrapper>
-    <Badge status="positive">Positive</Badge>
-    <Badge status="negative">Negative</Badge>
-    <Badge status="neutral">Neutral</Badge>
+    <Badge status="success">Success</Badge>
     <Badge status="error">Error</Badge>
     <Badge status="warning">Warning</Badge>
-    <Badge status="positive">
+    <Badge status="info">Info</Badge>
+    <Badge status="success">
       <Icon icon="facehappy" />
       with icon
     </Badge>
   </AllBadgesWrapper>
 );
 
-export const Positive = () => <Badge status="positive">Positive</Badge>;
-export const Negative = () => <Badge status="negative">Negative</Badge>;
+export const Success = () => <Badge status="success">Success</Badge>;
 export const Warning = () => <Badge status="warning">Warning</Badge>;
-export const Neutral = () => <Badge status="neutral">Neutral</Badge>;
+export const Info = () => <Badge status="info">Info</Badge>;
 export const Error = () => <Badge status="error">Error</Badge>;
 
 export const WithIcon = args => (

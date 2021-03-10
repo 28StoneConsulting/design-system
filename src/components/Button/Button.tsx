@@ -4,7 +4,6 @@ import { darken, fade } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import React, { ComponentProps, ComponentType, Fragment } from 'react';
 import { easing } from '../../shared/animation';
-import { color, typography } from '../../shared/styles';
 
 const Text = styled.span`
   display: inline-block;
@@ -59,8 +58,8 @@ const StyledButton = styled.button<StyledButtonProps>`
   opacity: 1;
   background: transparent;
 
-  font-size: ${p => (p.size === SIZES.SMALL ? typography.size.s1 : typography.size.s2)}px;
-  font-weight: ${typography.weight.bold};
+  font-size: ${p => (p.size === SIZES.SMALL ? p.theme.typography.size.s1 : p.theme.typography.size.s2)}px;
+  font-weight: ${p => p.theme.typography.fontWeightBold};
   line-height: 1;
 
   ${p =>
@@ -162,7 +161,7 @@ const StyledButton = styled.button<StyledButtonProps>`
     p.appearance === APPEARANCES.PRIMARY &&
     css`
       background: ${p.theme.palette.primary.main};
-      color: ${color.lightest};
+      color: ${p.theme.palette.monochrome.lightest};
 
       ${!p.isLoading &&
       css`
@@ -185,7 +184,7 @@ const StyledButton = styled.button<StyledButtonProps>`
     p.appearance === APPEARANCES.SECONDARY &&
     css`
       background: ${p.theme.palette.secondary.main};
-      color: ${color.lightest};
+      color: ${p.theme.palette.monochrome.lightest};
 
       ${!p.isLoading &&
       css`
@@ -218,7 +217,7 @@ const StyledButton = styled.button<StyledButtonProps>`
       &:active {
         background: ${p.theme.palette.primary.main};
         box-shadow: ${p.theme.palette.primary.main} 0 0 0 1px inset;
-        color: ${color.lightest};
+        color: ${p.theme.palette.monochrome.lightest};
       }
       &:focus {
         box-shadow: ${p.theme.palette.primary.main} 0 0 0 1px inset,
@@ -244,7 +243,7 @@ const StyledButton = styled.button<StyledButtonProps>`
       &:active {
         background: ${p.theme.palette.secondary.main};
         box-shadow: ${p.theme.palette.secondary.main} 0 0 0 1px inset;
-        color: ${color.lightest};
+        color: ${p.theme.palette.monochrome.lightest};
       }
       &:focus {
         box-shadow: ${p.theme.palette.secondary.main} 0 0 0 1px inset,

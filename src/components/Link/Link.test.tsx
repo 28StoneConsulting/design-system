@@ -1,9 +1,10 @@
 import ReactDOM from 'react-dom';
+import { ReactAnchorProps } from '../../types';
 import { Link } from './Link';
 
 // A straightforward link wrapper that renders an <a> with the passed props. What we are testing
 // here is that the Link component passes the right props to the wrapper and itself.
-const LinkWrapper = props => <a {...props} />;
+const LinkWrapper = (props: ReactAnchorProps) => <a {...props} />;
 
 it('has a href attribute when rendering with linkWrapper', () => {
   const div = document.createElement('div');

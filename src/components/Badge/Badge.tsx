@@ -2,9 +2,8 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 import { ComponentProps } from 'react';
-import { background, color, typography } from '../../shared/styles';
 
-export type BadgeStatus = 'positive' | 'negative' | 'neutral' | 'error' | 'warning';
+export type BadgeStatus = 'success' | 'info' | 'error' | 'warning';
 
 const BadgeWrapper = styled.div<{ status?: BadgeStatus }>`
   display: inline-block;
@@ -13,7 +12,7 @@ const BadgeWrapper = styled.div<{ status?: BadgeStatus }>`
   line-height: 12px;
   padding: 4px 12px;
   border-radius: 3em;
-  font-weight: ${typography.weight.bold};
+  font-weight: ${p => p.theme.typography.fontWeightBold};
 
   svg {
     height: 12px;
@@ -22,39 +21,32 @@ const BadgeWrapper = styled.div<{ status?: BadgeStatus }>`
     margin-top: -2px;
   }
 
-  ${props =>
-    props.status === 'positive' &&
+  ${p =>
+    p.status === 'success' &&
     css`
-      color: ${color.positive};
-      background: ${background.positive};
+      color: ${p.theme.palette.success.main};
+      background: ${p.theme.palette.successBackground.dark};
     `};
 
-  ${props =>
-    props.status === 'negative' &&
+  ${p =>
+    p.status === 'error' &&
     css`
-      color: ${color.negative};
-      background: ${background.negative};
+      color: ${p.theme.palette.error.main};
+      background: ${p.theme.palette.errorBackground.main};
     `};
 
-  ${props =>
-    props.status === 'warning' &&
+  ${p =>
+    p.status === 'warning' &&
     css`
-      color: ${color.warning};
-      background: ${background.warning};
+      color: ${p.theme.palette.warning.main};
+      background: ${p.theme.palette.warningBackground.main};
     `};
 
-  ${props =>
-    props.status === 'error' &&
+  ${p =>
+    p.status === 'info' &&
     css`
-      color: ${color.lightest};
-      background: ${color.negative};
-    `};
-
-  ${props =>
-    props.status === 'neutral' &&
-    css`
-      color: ${color.dark};
-      background: ${color.mediumlight};
+      color: ${p.theme.palette.info.main};
+      background: ${p.theme.palette.infoBackground.main};
     `};
 `;
 
@@ -69,7 +61,7 @@ export function Badge(props: BadgeProps) {
   return <BadgeWrapper {...props} />;
 }
 Badge.propTypes = {
-  status: PropTypes.oneOf(['positive', 'negative', 'neutral', 'error', 'warning']),
+  status: PropTypes.oneOf(['success', 'error', 'warning', 'info']),
 };
 
 Badge.defaultProps = {

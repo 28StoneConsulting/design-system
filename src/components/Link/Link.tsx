@@ -3,7 +3,6 @@ import styled from '@emotion/styled';
 import { darken } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import { ComponentProps, ComponentType, Fragment } from 'react';
-import { color } from '../../shared/styles';
 import { Icon } from '../Icon/Icon';
 
 export type LinkProps<P = unknown> = {
@@ -11,7 +10,6 @@ export type LinkProps<P = unknown> = {
   href?: string;
   containsIcon?: boolean;
   secondary?: boolean;
-  tertiary?: boolean;
   nochrome?: boolean;
   inverse?: boolean;
   isButton?: boolean;
@@ -25,17 +23,17 @@ const linkStyles = (p: LinkProps) => css`
   transition: transform 150ms ease-out, color 150ms ease-out;
   text-decoration: none;
 
-  color: ${color.secondary};
+  color: ${p.theme.palette.primary.main};
 
   &:hover,
   &:focus {
     cursor: pointer;
     transform: translateY(-1px);
-    color: ${darken(color.secondary, 0.07)};
+    color: ${darken(p.theme.palette.primary.main, 0.07)};
   }
   &:active {
     transform: translateY(0);
-    color: ${darken(color.secondary, 0.1)};
+    color: ${darken(p.theme.palette.primary.main, 0.1)};
   }
 
   svg {
@@ -62,27 +60,14 @@ const linkStyles = (p: LinkProps) => css`
 
   ${p.secondary &&
   css`
-    color: ${color.mediumdark};
+    color: ${p.theme.palette.secondary.main};
 
     &:hover {
-      color: ${color.dark};
+      color: ${darken(p.theme.palette.secondary.main, 0.07)};
     }
 
     &:active {
-      color: ${color.darker};
-    }
-  `};
-
-  ${p.tertiary &&
-  css`
-    color: ${color.dark};
-
-    &:hover {
-      color: ${color.darkest};
-    }
-
-    &:active {
-      color: ${color.mediumdark};
+      color: ${darken(p.theme.palette.secondary.main, 0.1)};
     }
   `};
 
@@ -99,14 +84,14 @@ const linkStyles = (p: LinkProps) => css`
 
   ${p.inverse &&
   css`
-    color: ${color.lightest};
+    color: ${p.theme.palette.monochrome.lightest};
 
     &:hover {
-      color: ${color.lighter};
+      color: ${p.theme.palette.monochrome.lighter};
     }
 
     &:active {
-      color: ${color.light};
+      color: ${p.theme.palette.monochrome.light};
     }
   `};
 

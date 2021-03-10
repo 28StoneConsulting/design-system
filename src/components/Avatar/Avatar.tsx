@@ -3,7 +3,6 @@ import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 import { ComponentProps } from 'react';
 import { glow } from '../../shared/animation';
-import { color, typography } from '../../shared/styles';
 import { Icon } from '../Icon/Icon';
 
 export const sizes = {
@@ -16,7 +15,7 @@ export const sizes = {
 export type AvatarSize = keyof typeof sizes;
 
 const Image = styled.div<{ loading: boolean; size: AvatarSize; src: string }>`
-  background: ${p => (!p.loading ? 'transparent' : color.light)};
+  background: ${p => (!p.loading ? 'transparent' : p.theme.palette.monochrome.light)};
   border-radius: 50%;
   display: inline-block;
   vertical-align: top;
@@ -72,31 +71,31 @@ const Image = styled.div<{ loading: boolean; size: AvatarSize; src: string }>`
   }
 
   path {
-    fill: ${color.medium};
+    fill: ${p => p.theme.palette.monochrome.medium};
     animation: ${glow} 1.5s ease-in-out infinite;
   }
 `;
 
 // prettier-ignore
 const Initial = styled.div<{ size: AvatarSize }>`
-  color: ${color.lightest};
+  color: ${p => p.theme.palette.monochrome.lightest};
   text-align: center;
 
-  font-size: ${typography.size.s2}px;
+  font-size: ${p => p.theme.typography.size.s2}px;
   line-height: ${sizes.medium}px;
 
-  ${props => props.size === 'tiny' && css`
-    font-size: ${Number(typography.size.s1) - 2}px;
+  ${p => p.size === 'tiny' && css`
+    font-size: ${Number(p.theme.typography.size.s1) - 2}px;
     line-height: ${sizes.tiny}px;
   `}
 
-  ${props => props.size === 'small' && css`
-    font-size: ${typography.size.s1}px;
+  ${p => p.size === 'small' && css`
+    font-size: ${p.theme.typography.size.s1}px;
     line-height: ${sizes.small}px;
   `}
 
-  ${props => props.size === 'large' && css`
-    font-size: ${typography.size.s3}px;
+  ${p => p.size === 'large' && css`
+    font-size: ${p.theme.typography.size.s3}px;
     line-height: ${sizes.large}px;
   `}
 `;

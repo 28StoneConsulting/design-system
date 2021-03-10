@@ -1,3 +1,15 @@
+# v0.1.3 (Wed Mar 10 2021)
+
+#### 🐛 Bug Fix
+
+- White body color for global CSS. Removed component selectors from But… [#24](https://github.com/28StoneConsulting/design-system/pull/24) ([@avalner](https://github.com/avalner))
+
+#### Authors: 1
+
+- Alexey Valner ([@avalner](https://github.com/avalner))
+
+---
+
 # v0.1.2 (Wed Mar 10 2021)
 
 #### 🐛 Bug Fix

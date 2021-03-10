@@ -161,7 +161,7 @@ theme.overrides = {
       },
       body: {
         height: '100%',
-        backgroundColor: 'black',
+        backgroundColor: '#fff',
         fontFamily: 'Nunito, sans-serif',
       },
       'button, input, textarea, select': {

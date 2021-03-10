@@ -83,13 +83,13 @@ const StyledButton = styled.button<StyledButtonProps>`
       }
     `}
 
-  ${Text} {
+  [data-text] {
     transform: scale3d(1, 1, 1) translate3d(0, 0, 0);
     transition: transform 700ms ${easing.rubber};
     opacity: 1;
   }
 
-  ${Loading} {
+  [data-loading] {
     transform: translate3d(0, 100%, 0);
   }
 
@@ -131,12 +131,12 @@ const StyledButton = styled.button<StyledButtonProps>`
       cursor: progress !important;
       opacity: 0.7;
 
-      ${Loading} {
+      [data-loading] {
         transform: translate3d(0, -50%, 0);
         opacity: 1;
       }
 
-      ${Text} {
+      [data-text] {
         transform: scale3d(0, 0, 1) translate3d(0, -100%, 0);
         opacity: 0;
       }
@@ -286,8 +286,8 @@ export function Button<P = null>({
 }: ButtonProps<P>) {
   const buttonInner = (
     <Fragment>
-      <Text>{children}</Text>
-      {isLoading && <Loading>{loadingText || 'LOADING...'}</Loading>}
+      <Text data-text>{children}</Text>
+      {isLoading && <Loading data-loading>{loadingText || 'LOADING...'}</Loading>}
     </Fragment>
   );
 

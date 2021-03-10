@@ -132,7 +132,6 @@ const StyledButton = styled.button<StyledButtonProps>`
       opacity: 0.7;
 
       ${Loading} {
-        transition: transform 700ms ${easing.rubber};
         transform: translate3d(0, -50%, 0);
         opacity: 1;
       }
@@ -142,9 +141,8 @@ const StyledButton = styled.button<StyledButtonProps>`
         opacity: 0;
       }
 
-      &:hover {
-        transform: none;
-      }
+      transition: none;
+      transform: none;
     `}
 
   ${p =>

@@ -29,9 +29,6 @@ export const AllButtons = () => (
     <Button appearance="secondaryOutline" isLoading>
       OUTLINE SECONDARY
     </Button>
-    <Button appearance="secondaryOutline" isDisabled>
-      DISABLED
-    </Button>
     <br />
     <Button appearance="primary" size="small">
       PRIMARY

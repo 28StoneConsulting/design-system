@@ -25,10 +25,6 @@ export const All = () => (
       Secondary
     </Link>
     <br />
-    <Link tertiary href="https://learnstorybook.com">
-      tertiary
-    </Link>
-    <br />
     <Link nochrome href="https://learnstorybook.com">
       nochrome
     </Link>
@@ -58,7 +54,7 @@ export const All = () => (
       is actually a button
     </Link>
     <br />
-    <Link tertiary to="" LinkWrapper={StoryLinkWrapper} href="http://storybook.js.org">
+    <Link to="" LinkWrapper={StoryLinkWrapper} href="http://storybook.js.org">
       has a LinkWrapper like GatsbyLink or NextLink
     </Link>
     <br />

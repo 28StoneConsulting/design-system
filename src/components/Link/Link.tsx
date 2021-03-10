@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { darken } from 'polished';
+import { darken } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import { ComponentProps, ComponentType, Fragment } from 'react';
 import { color } from '../../shared/styles';
@@ -31,11 +31,11 @@ const linkStyles = (p: LinkProps) => css`
   &:focus {
     cursor: pointer;
     transform: translateY(-1px);
-    color: ${darken(0.07, color.secondary)};
+    color: ${darken(color.secondary, 0.07)};
   }
   &:active {
     transform: translateY(0);
-    color: ${darken(0.1, color.secondary)};
+    color: ${darken(color.secondary, 0.1)};
   }
 
   svg {

@@ -1,12 +1,13 @@
 // Handy CSS animations for micro-interactions
 import { css, keyframes } from '@emotion/react';
+import { Keyframes } from '@emotion/serialize';
 import { color } from './styles';
 
 export const easing = {
   rubber: 'cubic-bezier(0.175, 0.885, 0.335, 1.05)',
 };
 
-export const rotate360 = keyframes`
+export const rotate360: Keyframes = keyframes`
 	from {
 		transform: rotate(0deg);
 	}
@@ -15,25 +16,25 @@ export const rotate360 = keyframes`
 	}
 `;
 
-export const glow = keyframes`
+export const glow: Keyframes = keyframes`
   0%, 100% { opacity: 1; }
   50% { opacity: .4; }
 `;
 
-export const float = keyframes`
+export const float: Keyframes = keyframes`
   0% { transform: translateY(1px); }
   25% { transform: translateY(0px); }
   50% { transform: translateY(-3px); }
   100% { transform: translateY(1px); }
 `;
 
-export const jiggle = keyframes`
+export const jiggle: Keyframes = keyframes`
   0%, 100% { transform:translate3d(0,0,0); }
   12.5%, 62.5% { transform:translate3d(-4px,0,0); }
   37.5%, 87.5% {  transform: translate3d(4px,0,0);  }
 `;
 
-export const shake = keyframes`
+export const shake: Keyframes = keyframes`
   0% { transform:rotate(-3deg) }
   1.68421% { transform:rotate(3deg) }
   2.10526% { transform:rotate(6deg) }

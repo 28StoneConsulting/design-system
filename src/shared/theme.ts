@@ -64,6 +64,9 @@ theme.overrides = {
         backgroundColor: 'black',
         fontFamily: 'Nunito, sans-serif',
       },
+      'button, input, textarea, select': {
+        outline: 'none',
+      },
       '#root': {
         height: '100%',
       },

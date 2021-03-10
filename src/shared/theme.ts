@@ -4,10 +4,10 @@ declare module '@material-ui/core/styles/createPalette' {
     mainBackgroundColor: React.CSSProperties['background'];
     panelBackgroundColor: React.CSSProperties['background'];
     subPanelBackgroundColor: React.CSSProperties['background'];
-    errorBackground: PaletteColor;
-    warningBackground: PaletteColor;
-    infoBackground: PaletteColor;
-    successBackground: PaletteColor;
+    errorBackground: React.CSSProperties['color'];
+    warningBackground: React.CSSProperties['color'];
+    infoBackground: React.CSSProperties['color'];
+    successBackground: React.CSSProperties['color'];
     monochrome: {
       lightest: React.CSSProperties['color'];
       lighter: React.CSSProperties['color'];
@@ -24,10 +24,10 @@ declare module '@material-ui/core/styles/createPalette' {
     mainBackgroundColor: React.CSSProperties['background'];
     panelBackgroundColor: React.CSSProperties['background'];
     subPanelBackgroundColor: React.CSSProperties['background'];
-    errorBackground: PaletteColorOptions;
-    warningBackground: PaletteColorOptions;
-    infoBackground: PaletteColorOptions;
-    successBackground: PaletteColorOptions;
+    errorBackground: React.CSSProperties['color'];
+    warningBackground: React.CSSProperties['color'];
+    infoBackground: React.CSSProperties['color'];
+    successBackground: React.CSSProperties['color'];
     monochrome: {
       lightest: React.CSSProperties['color'];
       lighter: React.CSSProperties['color'];
@@ -120,27 +120,19 @@ const theme = createMuiTheme({
     error: {
       main: '#FF4400',
     },
-    errorBackground: {
-      main: '#FEDED2',
-    },
+    errorBackground: '#FEDED2',
     warning: {
       main: '#E69D00',
     },
-    warningBackground: {
-      main: '#FFF5CF',
-    },
+    warningBackground: '#FFF5CF',
     info: {
       main: '#666666',
     },
-    infoBackground: {
-      main: '#DDDDDD',
-    },
+    infoBackground: '#DDDDDD',
     success: {
       main: '#66BF3C',
     },
-    successBackground: {
-      main: '#E1FFD4',
-    },
+    successBackground: '#E1FFD4',
     monochrome: {
       lightest: '#FFFFFF',
       lighter: '#F8F8F8',

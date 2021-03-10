@@ -25,28 +25,28 @@ const BadgeWrapper = styled.div<{ status?: BadgeStatus }>`
     p.status === 'success' &&
     css`
       color: ${p.theme.palette.success.main};
-      background: ${p.theme.palette.successBackground.dark};
+      background: ${p.theme.palette.successBackground};
     `};
 
   ${p =>
     p.status === 'error' &&
     css`
       color: ${p.theme.palette.error.main};
-      background: ${p.theme.palette.errorBackground.main};
+      background: ${p.theme.palette.errorBackground};
     `};
 
   ${p =>
     p.status === 'warning' &&
     css`
       color: ${p.theme.palette.warning.main};
-      background: ${p.theme.palette.warningBackground.main};
+      background: ${p.theme.palette.warningBackground};
     `};
 
   ${p =>
     p.status === 'info' &&
     css`
       color: ${p.theme.palette.info.main};
-      background: ${p.theme.palette.infoBackground.main};
+      background: ${p.theme.palette.infoBackground};
     `};
 `;
 

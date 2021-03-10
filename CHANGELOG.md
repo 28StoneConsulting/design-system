@@ -1,3 +1,15 @@
+# v0.1.5 (Wed Mar 10 2021)
+
+#### 🐛 Bug Fix
+
+- "runtime": "automatic" for "@babel/preset-react" [#26](https://github.com/28StoneConsulting/design-system/pull/26) ([@avalner](https://github.com/avalner))
+
+#### Authors: 1
+
+- Alexey Valner ([@avalner](https://github.com/avalner))
+
+---
+
 # v0.1.4 (Wed Mar 10 2021)
 
 #### 🐛 Bug Fix

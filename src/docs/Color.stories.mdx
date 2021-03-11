@@ -1,0 +1,55 @@
+import { Meta, ColorPalette, ColorItem } from '@storybook/addon-docs/blocks';
+
+import theme from '../shared/theme';
+
+<Meta title="Colors" />
+
+# Brand Colors
+
+<ColorPalette>
+  <ColorItem title="theme.palette.brand.orange" subtitle="Orange" colors={[theme.palette.brand.orange]} />
+  <ColorItem title="theme.palette.brand.darkGrey" subtitle="Dark Grey" colors={[theme.palette.brand.darkGrey]} />
+  <ColorItem title="theme.palette.brand.lightGrey" subtitle="Light Grey" colors={[theme.palette.brand.lightGrey]} />
+  <ColorItem title="theme.palette.brand.black" subtitle="Black" colors={[theme.palette.brand.black]} />
+  <ColorItem title="theme.palette.brand.white" subtitle="White" colors={[theme.palette.brand.white]} />
+  <ColorItem title="theme.palette.brand.yellow" subtitle="Yellow" colors={[theme.palette.brand.yellow]} />
+  <ColorItem title="theme.palette.brand.lightCyan" subtitle="Light Cyan" colors={[theme.palette.brand.lightCyan]} />
+  <ColorItem title="theme.palette.brand.darkCyan" subtitle="Dark Cyan" colors={[theme.palette.brand.darkCyan]} />
+</ColorPalette>
+
+# Material Theme Colors
+
+<ColorPalette>
+  <ColorItem title="theme.palette.primary.main" subtitle="Orange" colors={[theme.palette.primary.main]} />
+  <ColorItem title="theme.palette.secondary.main" subtitle="Dark Cyan" colors={[theme.palette.secondary.main]} />
+  <ColorItem title="theme.palette.success.main" subtitle="Green" colors={[theme.palette.success.main]} />
+  <ColorItem
+    title="theme.palette.successBackground"
+    subtitle="Light Green"
+    colors={[theme.palette.successBackground]}
+  />
+  <ColorItem title="theme.palette.warning.main" subtitle="Ochre" colors={[theme.palette.warning.main]} />
+  <ColorItem
+    title="theme.palette.warningBackground"
+    subtitle="Light Ochre"
+    colors={[theme.palette.warningBackground]}
+  />
+  <ColorItem title="theme.palette.error.main" subtitle="Red" colors={[theme.palette.error.main]} />
+  <ColorItem title="theme.palette.errorBackground" subtitle="Light Red" colors={[theme.palette.errorBackground]} />
+  <ColorItem title="theme.palette.info.main" subtitle="Grey" colors={[theme.palette.info.main]} />
+  <ColorItem title="theme.palette.infoBackground" subtitle="Light Grey" colors={[theme.palette.infoBackground]} />
+  <ColorItem
+    title="Monochrome"
+    colors={[
+      theme.palette.monochrome.darkest,
+      theme.palette.monochrome.darker,
+      theme.palette.monochrome.dark,
+      theme.palette.monochrome.mediumdark,
+      theme.palette.monochrome.medium,
+      theme.palette.monochrome.mediumlight,
+      theme.palette.monochrome.light,
+      theme.palette.monochrome.lighter,
+      theme.palette.monochrome.lightest,
+    ]}
+  />
+</ColorPalette>

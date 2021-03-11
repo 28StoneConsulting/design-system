@@ -173,6 +173,9 @@ theme.overrides = {
       '.MuiPickersBasePicker-container .MuiPickersDay-day:focus.MuiPickersDay-daySelected': {
         backgroundColor: theme.palette.primary.main,
       },
+      '.MuiAppBar-colorPrimary .MuiTabs-indicator': {
+        backgroundColor: 'white',
+      },
     },
   },
   MuiCard: {
@@ -220,11 +223,7 @@ theme.overrides = {
       color: theme.palette.common.black,
     },
   },
-  MuiTabs: {
-    indicator: {
-      backgroundColor: 'white',
-    },
-  },
+
   MuiExpansionPanel: {
     root: {
       border: '1px solid #d4d4d4',

@@ -2,6 +2,8 @@
 
 28Stone Design System is a reusable component library that helps 28Stone employees to build internal application UIs faster. The goal is to make building durable UIs more productive and satisfying.
 
+The latest version is published [here](https://28stoneconsulting.github.io/design-system).
+
 ## Install
 
 28SDS components are written in React, and its stories are written in [Component Story Format](https://medium.com/storybookjs/component-story-format-66f4c32366df).

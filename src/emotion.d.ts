@@ -1,4 +1,4 @@
-import themeLight from './shared/theme';
+import { themeLight } from './shared/theme';
 import '@emotion/react';
 
 declare module '@emotion/react' {

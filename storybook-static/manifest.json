@@ -1,0 +1,25 @@
+{
+  "short_name": "Investment Research Portal",
+  "name": "Investment Research Portal",
+  "icons": [
+    {
+      "src": "28stone_white.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/ico"
+    },
+    {
+      "src": "28stone.svg",
+      "type": "image/svg",
+      "sizes": "192x192"
+    },
+    {
+      "src": "28stone.svg",
+      "type": "image/svg",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

@@ -1,4 +1,4 @@
-import { createMuiTheme } from '@material-ui/core/styles';
+import { createMuiTheme, ThemeOptions } from '@material-ui/core/styles';
 import { BrandColors, MonochromeColors } from '@material-ui/core/styles/createPalette';
 declare module '@material-ui/core/styles/createPalette' {
   export type BrandColors = {
@@ -91,7 +91,7 @@ const monochrome: MonochromeColors = {
   darkest: '#333333',
 };
 
-const theme = createMuiTheme({
+const lightThemeOptions: ThemeOptions = {
   spacing: 8,
   breakpoints: {
     values: {
@@ -159,9 +159,23 @@ const theme = createMuiTheme({
     panelBackgroundColor: '#f4f2f1',
     subPanelBackgroundColor: brand.white,
   },
-});
+};
 
-theme.overrides = {
+const darkThemeOptions: ThemeOptions = {
+  ...lightThemeOptions,
+  palette: {
+    ...lightThemeOptions.palette,
+    type: 'dark',
+    mainBackgroundColor: '#333333',
+    panelBackgroundColor: '#292929',
+    subPanelBackgroundColor: '#333333',
+  },
+};
+
+export const themeDark = createMuiTheme(darkThemeOptions);
+export const themeLight = createMuiTheme(lightThemeOptions);
+
+themeLight.overrides = {
   MuiCssBaseline: {
     '@global': {
       html: {
@@ -179,7 +193,7 @@ theme.overrides = {
         height: '100%',
       },
       '.MuiPickersBasePicker-container .MuiPickersDay-day:focus.MuiPickersDay-daySelected': {
-        backgroundColor: theme.palette.primary.main,
+        backgroundColor: themeLight.palette.primary.main,
       },
       '.MuiAppBar-colorPrimary .MuiTabs-indicator': {
         backgroundColor: 'white',
@@ -188,7 +202,7 @@ theme.overrides = {
   },
   MuiCard: {
     root: {
-      padding: theme.spacing(2),
+      padding: themeLight.spacing(2),
       boxShadow: 'none',
       border: 'solid 1px #d4d4d4',
     },
@@ -196,18 +210,18 @@ theme.overrides = {
   MuiCardActions: {
     root: {
       flexWrap: 'wrap',
-      paddingRight: theme.spacing(2),
-      paddingLeft: theme.spacing(2),
+      paddingRight: themeLight.spacing(2),
+      paddingLeft: themeLight.spacing(2),
     },
     spacing: {
       '& > *': {
-        marginBottom: theme.spacing(1),
+        marginBottom: themeLight.spacing(1),
       },
       '& > :not(:first-child)': {
         marginLeft: 0,
       },
       '& > :not(:last-child)': {
-        marginRight: theme.spacing(1),
+        marginRight: themeLight.spacing(1),
       },
     },
   },
@@ -222,13 +236,13 @@ theme.overrides = {
   MuiTab: {
     root: {
       fontWeight: 600,
-      [theme.breakpoints.up('sm')]: {
+      [themeLight.breakpoints.up('sm')]: {
         padding: '6px 20px',
         fontSize: 18,
       },
     },
     textColorPrimary: {
-      color: theme.palette.common.black,
+      color: themeLight.palette.common.black,
     },
   },
 
@@ -237,7 +251,7 @@ theme.overrides = {
       border: '1px solid #d4d4d4',
       boxShadow: 'none',
       '&:not(:first-child)': {
-        marginTop: theme.spacing(3),
+        marginTop: themeLight.spacing(3),
       },
       '&:before': {
         display: 'none',
@@ -282,6 +296,4 @@ theme.overrides = {
   },
 };
 
-export type Theme = typeof theme;
-
-export default theme;
+export type Theme = typeof themeLight;

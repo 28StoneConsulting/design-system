@@ -1,3 +1,17 @@
+# v0.2.1 (Thu Mar 11 2021)
+
+#### 🐛 Bug Fix
+
+- Changed Tab indicator to white [#32](https://github.com/28StoneConsulting/design-system/pull/32) (arturs.langenfelds@28stone.com [@avalner](https://github.com/avalner) [@alangenfelds](https://github.com/alangenfelds))
+
+#### Authors: 3
+
+- Alexey Valner ([@avalner](https://github.com/avalner))
+- Arturs Langenfelds ([@alangenfelds](https://github.com/alangenfelds))
+- arturs.langenfelds@28stone.com (arturs.langenfelds@28stone.com)
+
+---
+
 # v0.2.0 (Thu Mar 11 2021)
 
 #### 🚀 Enhancement

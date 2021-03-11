@@ -1,8 +1,8 @@
 import * as animation from './shared/animation';
 import * as icons from './shared/icons';
-import theme from './shared/theme';
+import { themeLight, themeDark } from './shared/theme';
 
-export { animation, icons, theme };
+export { animation, icons, themeLight, themeDark };
 
 export * from './components/Avatar';
 export * from './components/Badge';

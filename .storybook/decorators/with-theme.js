@@ -2,11 +2,14 @@ import React from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline/CssBaseline';
 import { StylesProvider, MuiThemeProvider } from '@material-ui/core/styles';
 import { ThemeProvider, Global, css } from '@emotion/react';
-import theme from '../../src/shared/theme';
+import { useDarkMode } from 'storybook-dark-mode';
+import { themeLight, themeDark } from '../../src/shared/theme';
 
-export default storyFn => (
+export default storyFn => {
+  const theme = useDarkMode() ? themeDark : themeLight
+  return (
   <>
-    <Global styles={globalStyle} />
+    <Global styles={getGlobalStyle(theme)} />
     <StylesProvider injectFirst>
       <MuiThemeProvider theme={theme}>
         <CssBaseline />
@@ -16,9 +19,10 @@ export default storyFn => (
       </MuiThemeProvider>
     </StylesProvider>
   </>
-);
+  );
+};
 
-const globalStyle = css`
+const getGlobalStyle = theme => css`
   body {
     background-color: ${theme.palette.panelBackgroundColor};
   }

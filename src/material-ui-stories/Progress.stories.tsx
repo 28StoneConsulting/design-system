@@ -1,15 +1,15 @@
-import React from 'react';
-import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
-import clsx from 'clsx';
-import CircularProgress, { CircularProgressProps } from '@material-ui/core/CircularProgress';
-import LinearProgress, { LinearProgressProps } from '@material-ui/core/LinearProgress';
 import Box from '@material-ui/core/Box';
-import Typography from '@material-ui/core/Typography';
-import { green } from '@material-ui/core/colors';
 import Button from '@material-ui/core/Button';
+import CircularProgress, { CircularProgressProps } from '@material-ui/core/CircularProgress';
+import { green } from '@material-ui/core/colors';
 import Fab from '@material-ui/core/Fab';
+import LinearProgress, { LinearProgressProps } from '@material-ui/core/LinearProgress';
+import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
 import CheckIcon from '@material-ui/icons/Check';
 import SaveIcon from '@material-ui/icons/Save';
+import clsx from 'clsx';
+import React from 'react';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -219,6 +219,10 @@ export const LinearDeterminate = () => {
   );
 };
 
+LinearDeterminate.parameters = {
+  chromatic: { disable: true },
+};
+
 export const LinearBuffer = () => {
   const classes = useStyles();
   const [progress, setProgress] = React.useState(0);
@@ -255,6 +259,10 @@ export const LinearBuffer = () => {
       <LinearProgress variant="buffer" value={progress} valueBuffer={buffer} />
     </div>
   );
+};
+
+LinearBuffer.parameters = {
+  chromatic: { disable: true },
 };
 
 function LinearProgressWithLabel(props: LinearProgressProps & { value: number }) {

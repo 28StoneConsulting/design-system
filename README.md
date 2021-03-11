@@ -44,7 +44,7 @@ const example = () => (
   </StylesProvider>
 );
 ```
-The codesandbox example can be accessed [here](https://codesandbox.io/s/28stone-design-system-usage-expample-1qdbn?file=/public/index.html)
+The codesandbox example can be accessed [here](https://codesandbox.io/s/28stone-design-system-usage-expample-1qdbn?file=/src/App.tsx)
 
 ### **Run and develop 28SDS locally**
 

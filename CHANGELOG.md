@@ -1,3 +1,15 @@
+# v1.0.0 (Thu Mar 11 2021)
+
+#### 💥 Breaking Change
+
+- Feature/dark mode [#34](https://github.com/28StoneConsulting/design-system/pull/34) ([@avalner](https://github.com/avalner))
+
+#### Authors: 1
+
+- Alexey Valner ([@avalner](https://github.com/avalner))
+
+---
+
 # v0.2.5 (Thu Mar 11 2021)
 
 #### ⚠️ Pushed to `main`

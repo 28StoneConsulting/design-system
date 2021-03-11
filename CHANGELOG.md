@@ -1,3 +1,15 @@
+# v0.2.4 (Thu Mar 11 2021)
+
+#### ⚠️ Pushed to `main`
+
+- Update README.md ([@avalner](https://github.com/avalner))
+
+#### Authors: 1
+
+- Alexey Valner ([@avalner](https://github.com/avalner))
+
+---
+
 # v0.2.3 (Thu Mar 11 2021)
 
 #### ⚠️ Pushed to `main`

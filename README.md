@@ -22,7 +22,7 @@ or
 import CssBaseline from '@material-ui/core/CssBaseline/CssBaseline';
 import { StylesProvider, MuiThemeProvider } from '@material-ui/core/styles';
 import { ThemeProvider } from '@emotion/react';
-import { Button, Badge } from '@28stoneconsulting/design-system';
+import { themeDark as theme, Button, Badge } from '@28stoneconsulting/design-system';
 ```
 
 and use them like so
@@ -44,6 +44,7 @@ const example = () => (
   </StylesProvider>
 );
 ```
+
 The codesandbox example can be accessed [here](https://codesandbox.io/s/28stone-design-system-usage-expample-1qdbn?file=/src/App.tsx)
 
 ### **Run and develop 28SDS locally**

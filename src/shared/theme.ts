@@ -1,5 +1,28 @@
 import { createMuiTheme } from '@material-ui/core/styles';
+import { BrandColors, MonochromeColors } from '@material-ui/core/styles/createPalette';
 declare module '@material-ui/core/styles/createPalette' {
+  export type BrandColors = {
+    orange: React.CSSProperties['color'];
+    darkGrey: React.CSSProperties['color'];
+    lightGrey: React.CSSProperties['color'];
+    black: React.CSSProperties['color'];
+    white: React.CSSProperties['color'];
+    yellow: React.CSSProperties['color'];
+    lightCyan: React.CSSProperties['color'];
+    darkCyan: React.CSSProperties['color'];
+  };
+
+  export type MonochromeColors = {
+    lightest: React.CSSProperties['color'];
+    lighter: React.CSSProperties['color'];
+    light: React.CSSProperties['color'];
+    mediumlight: React.CSSProperties['color'];
+    medium: React.CSSProperties['color'];
+    mediumdark: React.CSSProperties['color'];
+    dark: React.CSSProperties['color'];
+    darker: React.CSSProperties['color'];
+    darkest: React.CSSProperties['color'];
+  };
   interface Palette {
     mainBackgroundColor: React.CSSProperties['background'];
     panelBackgroundColor: React.CSSProperties['background'];
@@ -8,17 +31,8 @@ declare module '@material-ui/core/styles/createPalette' {
     warningBackground: React.CSSProperties['color'];
     infoBackground: React.CSSProperties['color'];
     successBackground: React.CSSProperties['color'];
-    monochrome: {
-      lightest: React.CSSProperties['color'];
-      lighter: React.CSSProperties['color'];
-      light: React.CSSProperties['color'];
-      mediumlight: React.CSSProperties['color'];
-      medium: React.CSSProperties['color'];
-      mediumdark: React.CSSProperties['color'];
-      dark: React.CSSProperties['color'];
-      darker: React.CSSProperties['color'];
-      darkest: React.CSSProperties['color'];
-    };
+    brand: BrandColors;
+    monochrome: MonochromeColors;
   }
   interface PaletteOptions {
     mainBackgroundColor: React.CSSProperties['background'];
@@ -28,51 +42,54 @@ declare module '@material-ui/core/styles/createPalette' {
     warningBackground: React.CSSProperties['color'];
     infoBackground: React.CSSProperties['color'];
     successBackground: React.CSSProperties['color'];
-    monochrome: {
-      lightest: React.CSSProperties['color'];
-      lighter: React.CSSProperties['color'];
-      light: React.CSSProperties['color'];
-      mediumlight: React.CSSProperties['color'];
-      medium: React.CSSProperties['color'];
-      mediumdark: React.CSSProperties['color'];
-      dark: React.CSSProperties['color'];
-      darker: React.CSSProperties['color'];
-      darkest: React.CSSProperties['color'];
-    };
+    brand: BrandColors;
+    monochrome: MonochromeColors;
   }
 }
-
 declare module '@material-ui/core/styles/createTypography' {
+  export type TypographySize = {
+    s1: string;
+    s2: string;
+    s3: string;
+    m1: string;
+    m2: string;
+    m3: string;
+    l1: string;
+    l2: string;
+    l3: string;
+    code: string;
+  };
   interface Typography {
-    size: {
-      s1: string;
-      s2: string;
-      s3: string;
-      m1: string;
-      m2: string;
-      m3: string;
-      l1: string;
-      l2: string;
-      l3: string;
-      code: string;
-    };
+    size: TypographySize;
   }
 
   interface TypographyOptions {
-    size: {
-      s1: string;
-      s2: string;
-      s3: string;
-      m1: string;
-      m2: string;
-      m3: string;
-      l1: string;
-      l2: string;
-      l3: string;
-      code: string;
-    };
+    size: TypographySize;
   }
 }
+
+const brand: BrandColors = {
+  orange: '#F05A28',
+  darkGrey: '#4A4A4A',
+  lightGrey: '#D9D3D1',
+  black: '#000',
+  white: '#FFF',
+  yellow: '#F99220',
+  lightCyan: '#89CFD9',
+  darkCyan: '#408C8C',
+};
+
+const monochrome: MonochromeColors = {
+  lightest: '#FFFFFF',
+  lighter: '#F8F8F8',
+  light: '#F3F3F3',
+  mediumlight: '#EEEEEE',
+  medium: '#DDDDDD',
+  mediumdark: '#999999',
+  dark: '#666666',
+  darker: '#444444',
+  darkest: '#333333',
+};
 
 const theme = createMuiTheme({
   spacing: 8,
@@ -112,10 +129,10 @@ const theme = createMuiTheme({
   },
   palette: {
     primary: {
-      main: '#f05a28',
+      main: brand.orange,
     },
     secondary: {
-      main: '#408C8C',
+      main: brand.darkCyan,
     },
     error: {
       main: '#FF4400',
@@ -133,23 +150,14 @@ const theme = createMuiTheme({
       main: '#66BF3C',
     },
     successBackground: '#E1FFD4',
-    monochrome: {
-      lightest: '#FFFFFF',
-      lighter: '#F8F8F8',
-      light: '#F3F3F3',
-      mediumlight: '#EEEEEE',
-      medium: '#DDDDDD',
-      mediumdark: '#999999',
-      dark: '#666666',
-      darker: '#444444',
-      darkest: '#333333',
-    },
+    brand,
+    monochrome,
     background: {
-      paper: '#fff',
+      paper: brand.white,
     },
-    mainBackgroundColor: '#fff',
+    mainBackgroundColor: brand.white,
     panelBackgroundColor: '#f4f2f1',
-    subPanelBackgroundColor: '#fff',
+    subPanelBackgroundColor: brand.white,
   },
 });
 

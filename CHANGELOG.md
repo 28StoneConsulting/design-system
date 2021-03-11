@@ -1,3 +1,21 @@
+# v0.2.0 (Thu Mar 11 2021)
+
+#### 🚀 Enhancement
+
+- Intro, Color and Typography pages. Theme enhancements. [#33](https://github.com/28StoneConsulting/design-system/pull/33) ([@avalner](https://github.com/avalner))
+
+#### 🐛 Bug Fix
+
+- added Select and Switch stories [#27](https://github.com/28StoneConsulting/design-system/pull/27) (arturs.langenfelds@28stone.com [@alangenfelds](https://github.com/alangenfelds))
+
+#### Authors: 3
+
+- Alexey Valner ([@avalner](https://github.com/avalner))
+- Arturs Langenfelds ([@alangenfelds](https://github.com/alangenfelds))
+- arturs.langenfelds@28stone.com (arturs.langenfelds@28stone.com)
+
+---
+
 # v0.1.5 (Wed Mar 10 2021)
 
 #### 🐛 Bug Fix

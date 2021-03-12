@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "./main.d14eaba713369b08a8f7.bundle.js",
-    "main.js.map": "./main.d14eaba713369b08a8f7.bundle.js.map",
-    "runtime~main.js": "./runtime~main.d14eaba713369b08a8f7.bundle.js",
-    "runtime~main.js.map": "./runtime~main.d14eaba713369b08a8f7.bundle.js.map",
-    "vendors~main.js": "./vendors~main.d14eaba713369b08a8f7.bundle.js",
-    "vendors~main.js.map": "./vendors~main.d14eaba713369b08a8f7.bundle.js.map",
+    "main.js": "./main.3761924fe1a955aa346d.bundle.js",
+    "main.js.map": "./main.3761924fe1a955aa346d.bundle.js.map",
+    "runtime~main.js": "./runtime~main.3761924fe1a955aa346d.bundle.js",
+    "runtime~main.js.map": "./runtime~main.3761924fe1a955aa346d.bundle.js.map",
+    "vendors~main.js": "./vendors~main.3761924fe1a955aa346d.bundle.js",
+    "vendors~main.js.map": "./vendors~main.3761924fe1a955aa346d.bundle.js.map",
     "iframe.html": "./iframe.html",
     "static/media/logo-black.480e6e73.svg": "./static/media/logo-black.480e6e73.svg",
     "static/media/logo-white.49fc678a.svg": "./static/media/logo-white.49fc678a.svg",
-    "vendors~main.d14eaba713369b08a8f7.bundle.js.LICENSE.txt": "./vendors~main.d14eaba713369b08a8f7.bundle.js.LICENSE.txt"
+    "vendors~main.3761924fe1a955aa346d.bundle.js.LICENSE.txt": "./vendors~main.3761924fe1a955aa346d.bundle.js.LICENSE.txt"
   },
   "entrypoints": [
-    "runtime~main.d14eaba713369b08a8f7.bundle.js",
-    "vendors~main.d14eaba713369b08a8f7.bundle.js",
-    "main.d14eaba713369b08a8f7.bundle.js"
+    "runtime~main.3761924fe1a955aa346d.bundle.js",
+    "vendors~main.3761924fe1a955aa346d.bundle.js",
+    "main.3761924fe1a955aa346d.bundle.js"
   ]
 }

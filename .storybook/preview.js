@@ -1,4 +1,3 @@
-import { addDecorator } from '@storybook/react';
 import { lightTheme, darkTheme } from './theme';
 import withTheme from './decorators/with-theme';
 
@@ -22,4 +21,4 @@ export const parameters = {
   }
 };
 
-addDecorator(withTheme);
+export const decorators = [withTheme];

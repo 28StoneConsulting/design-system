@@ -1,14 +1,16 @@
-import React from 'react';
-import { makeStyles, Theme } from '@material-ui/core/styles';
+import { useTheme } from '@emotion/react';
 import AppBar from '@material-ui/core/AppBar';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
-import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import PhoneIcon from '@material-ui/icons/Phone';
+import Paper from '@material-ui/core/Paper';
+import { makeStyles } from '@material-ui/core/styles';
+import Tab from '@material-ui/core/Tab';
+import Tabs from '@material-ui/core/Tabs';
+import Typography from '@material-ui/core/Typography';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import PersonPinIcon from '@material-ui/icons/PersonPin';
+import PhoneIcon from '@material-ui/icons/Phone';
+import React from 'react';
+import { Theme } from '../shared/theme';
 
 export default {
   title: 'Material UI/Tabs',
@@ -48,28 +50,30 @@ function a11yProps(index: number) {
   };
 }
 
-const useStyles = makeStyles((theme: Theme) => ({
-  root: {
-    flexGrow: 1,
-    width: '100%',
-    backgroundColor: theme.palette.background.paper,
-  },
-  iconRoot: {
-    flexGrow: 1,
-    maxWidth: 500,
-  },
-  verticalRoot: {
-    flexGrow: 1,
-    backgroundColor: theme.palette.background.paper,
-    display: 'flex',
-    height: 224,
-  },
-  tabs: {
-    borderRight: `1px solid ${theme.palette.divider}`,
-  },
-}));
+const useStyles = makeStyles((theme: Theme) => {
+  return {
+    root: {
+      flexGrow: 1,
+      width: '100%',
+      backgroundColor: theme.palette.background.paper,
+    },
+    iconRoot: {
+      flexGrow: 1,
+      maxWidth: 500,
+    },
+    verticalRoot: {
+      flexGrow: 1,
+      backgroundColor: theme.palette.background.paper,
+      display: 'flex',
+      height: 224,
+    },
+    tabs: {
+      borderRight: `1px solid ${theme.palette.divider}`,
+    },
+  };
+});
 
-export const SimpleTabs = () => {
+const SimpleTabsInternal = () => {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -99,7 +103,9 @@ export const SimpleTabs = () => {
   );
 };
 
-export const DisabledTabs = () => {
+export const SimpleTabs = () => <SimpleTabsInternal />;
+
+const DisabledTabsInternal = () => {
   const [value, setValue] = React.useState(2);
 
   const handleChange = (event: React.ChangeEvent, newValue: number) => {
@@ -123,7 +129,9 @@ export const DisabledTabs = () => {
   );
 };
 
-export const ScrollableTabs = () => {
+export const DisabledTabs = () => <DisabledTabsInternal />;
+
+const ScrollableTabsInternal = () => {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -133,12 +141,10 @@ export const ScrollableTabs = () => {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" color="default">
+      <AppBar position="static">
         <Tabs
           value={value}
           onChange={handleChange}
-          indicatorColor="primary"
-          textColor="primary"
           variant="scrollable"
           scrollButtons="auto"
           aria-label="scrollable auto tabs example"
@@ -177,7 +183,9 @@ export const ScrollableTabs = () => {
   );
 };
 
-export const IconTabs = () => {
+export const ScrollableTabs = () => <ScrollableTabsInternal />;
+
+const IconTabsInternal = () => {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -203,7 +211,9 @@ export const IconTabs = () => {
   );
 };
 
-export const IconLabelTabs = () => {
+export const IconTabs = () => <IconTabsInternal />;
+
+const IconLabelTabsInternal = () => {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -229,9 +239,13 @@ export const IconLabelTabs = () => {
   );
 };
 
-export const VerticalTabs = () => {
+export const IconLabelTabs = () => <IconLabelTabsInternal />;
+
+const VerticalTabsInternal = () => {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
+  const theme = useTheme();
+  console.log('theme:', theme);
 
   const handleChange = (event: React.ChangeEvent, newValue: number) => {
     setValue(newValue);
@@ -279,3 +293,5 @@ export const VerticalTabs = () => {
     </div>
   );
 };
+
+export const VerticalTabs = () => <VerticalTabsInternal />;

@@ -160,16 +160,17 @@ const lightThemeOptions: ThemeOptions = {
   },
 };
 
-const darkThemeOptions: ThemeOptions = {
-  ...lightThemeOptions,
+const darkThemeOptions: ThemeOptions = deepMerge({}, lightThemeOptions, {
   palette: {
-    ...lightThemeOptions.palette,
     type: 'dark',
+    background: {
+      paper: '#333333',
+    },
     mainBackgroundColor: '#333333',
     panelBackgroundColor: '#292929',
     subPanelBackgroundColor: '#333333',
   },
-};
+} as ThemeOptions);
 
 export const darkTheme = createMuiTheme(darkThemeOptions);
 export const lightTheme = createMuiTheme(lightThemeOptions);
@@ -239,9 +240,6 @@ const lightOverrides: Overrides = {
         padding: '6px 20px',
         fontSize: 18,
       },
-    },
-    textColorPrimary: {
-      color: lightTheme.palette.common.black,
     },
   },
 

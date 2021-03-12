@@ -1,3 +1,15 @@
+# v1.0.7 (Fri Mar 12 2021)
+
+#### ⚠️ Pushed to `main`
+
+- Merge branch 'main' of github.com:28StoneConsulting/design-system ([@avalner](https://github.com/avalner))
+
+#### Authors: 1
+
+- Alexey Valner ([@avalner](https://github.com/avalner))
+
+---
+
 # v1.0.6 (Fri Mar 12 2021)
 
 #### ⚠️ Pushed to `main`

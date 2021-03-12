@@ -230,11 +230,13 @@ const LinearDeterminateInternal = () => {
   );
 };
 
-LinearDeterminateInternal.parameters = {
+export const LinearDeterminate = () => <LinearDeterminateInternal />;
+
+
+LinearDeterminate.parameters = {
   chromatic: { disable: true },
 };
 
-export const LinearDeterminate = () => <LinearDeterminateInternal />;
 
 const LinearBufferInternal = () => {
   const classes = useStyles();
@@ -274,11 +276,13 @@ const LinearBufferInternal = () => {
   );
 };
 
-LinearBufferInternal.parameters = {
-  chromatic: { disable: true },
+export const LinearBuffer = () => <LinearBufferInternal />;
+
+
+LinearBuffer.parameters = {
+chromatic: { disable: true },
 };
 
-export const LinearBuffer = () => <LinearBufferInternal />;
 
 function LinearProgressWithLabel(props: LinearProgressProps & { value: number }) {
   return (

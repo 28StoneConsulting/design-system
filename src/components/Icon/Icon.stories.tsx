@@ -24,13 +24,13 @@ const Item = styled.li<{ minimal?: boolean }>`
     height: 24px;
   }
 
-  ${props =>
-    props.minimal &&
+  ${p =>
+    p.minimal &&
     css`
       flex: none;
       min-width: auto;
       padding: 0;
-      background: #fff;
+      background: ${p.theme.palette.panelBackgroundColor};
       border: 1px solid #666;
 
       svg {

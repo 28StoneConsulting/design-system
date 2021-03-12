@@ -8,7 +8,7 @@ export default {
   component: Switch,
 };
 
-export const BasicSwitches = () => {
+const BasicSwitchesInternal = () => {
   const [state, setState] = React.useState({
     checkedA: true,
     checkedB: true,
@@ -41,7 +41,9 @@ export const BasicSwitches = () => {
   );
 };
 
-export const WithLabels = () => {
+export const BasicSwitches = () => <BasicSwitchesInternal />;
+
+const WithLabelsInternal = () => {
   const [state, setState] = React.useState({
     checkedA: true,
     checkedB: true,
@@ -68,7 +70,9 @@ export const WithLabels = () => {
   );
 };
 
-export const Sizes = () => {
+export const WithLabels = () => <WithLabelsInternal />;
+
+const SizesInternal = () => {
   const [checked, setChecked] = React.useState(false);
 
   const toggleChecked = () => {
@@ -82,3 +86,5 @@ export const Sizes = () => {
     </FormGroup>
   );
 };
+
+export const Sizes = () => <SizesInternal />;

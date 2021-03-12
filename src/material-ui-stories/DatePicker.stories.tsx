@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export const DatePicker = () => {
+const DatePickerInternal = () => {
   const classes = useStyles();
 
   return (
@@ -40,7 +40,9 @@ export const DatePicker = () => {
   );
 };
 
-export const DateTimePicker = () => {
+export const DatePicker = () => <DatePickerInternal />;
+
+const DateTimePickerInternal = () => {
   const classes = useStyles();
 
   return (
@@ -58,3 +60,5 @@ export const DateTimePicker = () => {
     </form>
   );
 };
+
+export const DateTimePicker = () => <DateTimePickerInternal />;

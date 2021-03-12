@@ -1,13 +1,12 @@
 import styled from '@emotion/styled';
-import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
-
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
-import PhotoCamera from '@material-ui/icons/PhotoCamera';
-import DeleteIcon from '@material-ui/icons/Delete';
+import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 import CloudUploadIcon from '@material-ui/icons/CloudUpload';
+import DeleteIcon from '@material-ui/icons/Delete';
 import KeyboardVoiceIcon from '@material-ui/icons/KeyboardVoice';
+import PhotoCamera from '@material-ui/icons/PhotoCamera';
 import SaveIcon from '@material-ui/icons/Save';
 import SendIcon from '@material-ui/icons/Send';
 
@@ -38,14 +37,7 @@ export default {
   component: Button,
 };
 
-// export const Standard = args => <Button {...args} />;
-// Standard.args = {
-//   size: 'large',
-//   username: 'Tom Coleman',
-//   src: 'https://avatars2.githubusercontent.com/u/132554',
-// };
-
-export const ContainedButtons = () => (
+const ContainedButtonsInternal = () => (
   <ButtonsWrapper>
     <Button variant="contained">Default</Button>
     <Button variant="contained" color="primary">
@@ -64,7 +56,9 @@ export const ContainedButtons = () => (
   </ButtonsWrapper>
 );
 
-export const OutlinedButtons = () => (
+export const ContainedButtons = () => <ContainedButtonsInternal />;
+
+const OutlinedButtonsInternal = () => (
   <ButtonsWrapper>
     <Button variant="outlined">Default</Button>
     <Button variant="outlined" color="primary">
@@ -83,7 +77,9 @@ export const OutlinedButtons = () => (
   </ButtonsWrapper>
 );
 
-export const TextButtons = () => (
+export const OutlinedButtons = () => <OutlinedButtonsInternal />;
+
+const TextButtonsInternal = () => (
   <ButtonsWrapper>
     <Button>Default</Button>
     <Button color="primary">Primary</Button>
@@ -96,7 +92,9 @@ export const TextButtons = () => (
   </ButtonsWrapper>
 );
 
-export const Sizes = () => {
+export const TextButtons = () => <TextButtonsInternal />;
+
+const SizesInternal = () => {
   const classes = useStyles();
   return (
     <ButtonsWrapper>
@@ -151,7 +149,9 @@ export const Sizes = () => {
   );
 };
 
-export const UploadButton = () => {
+export const Sizes = () => <SizesInternal />;
+
+const UploadButtonInternal = () => {
   const classes = useStyles();
   return (
     <ButtonsWrapper>
@@ -172,7 +172,9 @@ export const UploadButton = () => {
   );
 };
 
-export const ButtonsWithIconsAndLabel = () => {
+export const UploadButton = () => <UploadButtonInternal />;
+
+const ButtonsWithIconsAndLabelInternal = () => {
   const classes = useStyles();
   return (
     <ButtonsWrapper>
@@ -203,6 +205,8 @@ export const ButtonsWithIconsAndLabel = () => {
     </ButtonsWrapper>
   );
 };
+
+export const ButtonsWithIconsAndLabel = () => <ButtonsWithIconsAndLabelInternal />;
 
 const ButtonsWrapper = styled.div`
   & > * {

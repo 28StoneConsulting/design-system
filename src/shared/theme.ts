@@ -299,7 +299,7 @@ const darkOverrides: Overrides = deepMerge({}, lightOverrides, {
   MuiCssBaseline: {
     '@global': {
       body: {
-        color: lightTheme.palette.text.primary,
+        color: darkTheme.palette.text.primary,
         backgroundColor: darkThemeOptions.palette.mainBackgroundColor,
       },
     },

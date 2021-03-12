@@ -38,14 +38,7 @@ export default {
   component: Button,
 };
 
-// export const Standard = args => <Button {...args} />;
-// Standard.args = {
-//   size: 'large',
-//   username: 'Tom Coleman',
-//   src: 'https://avatars2.githubusercontent.com/u/132554',
-// };
-
-export const ContainedButtons = () => (
+const ContainedButtonsInternal = () => (
   <ButtonsWrapper>
     <Button variant="contained">Default</Button>
     <Button variant="contained" color="primary">
@@ -64,7 +57,9 @@ export const ContainedButtons = () => (
   </ButtonsWrapper>
 );
 
-export const OutlinedButtons = () => (
+export const ContainedButtons = () => <ContainedButtonsInternal />;
+
+const OutlinedButtonsInternal = () => (
   <ButtonsWrapper>
     <Button variant="outlined">Default</Button>
     <Button variant="outlined" color="primary">
@@ -83,7 +78,9 @@ export const OutlinedButtons = () => (
   </ButtonsWrapper>
 );
 
-export const TextButtons = () => (
+export const OutlinedButtons = () => <OutlinedButtonsInternal />;
+
+const TextButtonsInternal = () => (
   <ButtonsWrapper>
     <Button>Default</Button>
     <Button color="primary">Primary</Button>
@@ -96,7 +93,9 @@ export const TextButtons = () => (
   </ButtonsWrapper>
 );
 
-export const Sizes = () => {
+export const TextButtons = () => <TextButtonsInternal />;
+
+const SizesInternal = () => {
   const classes = useStyles();
   return (
     <ButtonsWrapper>
@@ -151,7 +150,9 @@ export const Sizes = () => {
   );
 };
 
-export const UploadButton = () => {
+export const Sizes = () => <SizesInternal />;
+
+export const UploadButtonInternal = () => {
   const classes = useStyles();
   return (
     <ButtonsWrapper>
@@ -172,7 +173,9 @@ export const UploadButton = () => {
   );
 };
 
-export const ButtonsWithIconsAndLabel = () => {
+export const UploadButton = () => <UploadButtonInternal />;
+
+const ButtonsWithIconsAndLabelInternal = () => {
   const classes = useStyles();
   return (
     <ButtonsWrapper>
@@ -203,6 +206,8 @@ export const ButtonsWithIconsAndLabel = () => {
     </ButtonsWrapper>
   );
 };
+
+export const ButtonsWithIconsAndLabel = () => <ButtonsWithIconsAndLabelInternal />;
 
 const ButtonsWrapper = styled.div`
   & > * {

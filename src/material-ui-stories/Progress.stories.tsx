@@ -60,7 +60,7 @@ export default {
   component: CircularProgress,
 };
 
-export const CircularIndeterminate = () => {
+const CircularIndeterminateInternal = () => {
   const classes = useStyles();
 
   return (
@@ -71,7 +71,9 @@ export const CircularIndeterminate = () => {
   );
 };
 
-export const CircularDeterminate = () => {
+export const CircularIndeterminate = () => <CircularIndeterminateInternal />;
+
+const CircularDeterminateInternal = () => {
   const classes = useStyles();
   const [progress, setProgress] = React.useState(0);
 
@@ -96,7 +98,9 @@ export const CircularDeterminate = () => {
   );
 };
 
-export const CircularIntegration = () => {
+export const CircularDeterminate = () => <CircularDeterminateInternal />;
+
+const CircularIntegrationInternal = () => {
   const classes = useStyles();
   const [loading, setLoading] = React.useState(false);
   const [success, setSuccess] = React.useState(false);
@@ -147,6 +151,8 @@ export const CircularIntegration = () => {
   );
 };
 
+export const CircularIntegration = () => <CircularIntegrationInternal />;
+
 const CircularProgressWithLabel = (props: CircularProgressProps & { value: number }) => {
   return (
     <Box position="relative" display="inline-flex">
@@ -166,7 +172,8 @@ const CircularProgressWithLabel = (props: CircularProgressProps & { value: numbe
     </Box>
   );
 };
-export const CircularWithLabel = () => {
+
+const CircularWithLabelInternal = () => {
   const [progress, setProgress] = React.useState(10);
 
   React.useEffect(() => {
@@ -181,7 +188,9 @@ export const CircularWithLabel = () => {
   return <CircularProgressWithLabel value={progress} />;
 };
 
-export const LinearIndeterminate = () => {
+export const CircularWithLabel = () => <CircularWithLabelInternal />;
+
+const LinearIndeterminateInternal = () => {
   const classes = useStyles();
 
   return (
@@ -192,7 +201,9 @@ export const LinearIndeterminate = () => {
   );
 };
 
-export const LinearDeterminate = () => {
+export const LinearIndeterminate = () => <LinearIndeterminateInternal />;
+
+const LinearDeterminateInternal = () => {
   const classes = useStyles();
   const [progress, setProgress] = React.useState(0);
 
@@ -219,11 +230,13 @@ export const LinearDeterminate = () => {
   );
 };
 
+export const LinearDeterminate = () => <LinearDeterminateInternal />;
+
 LinearDeterminate.parameters = {
   chromatic: { disable: true },
 };
 
-export const LinearBuffer = () => {
+const LinearBufferInternal = () => {
   const classes = useStyles();
   const [progress, setProgress] = React.useState(0);
   const [buffer, setBuffer] = React.useState(10);
@@ -261,6 +274,8 @@ export const LinearBuffer = () => {
   );
 };
 
+export const LinearBuffer = () => <LinearBufferInternal />;
+
 LinearBuffer.parameters = {
   chromatic: { disable: true },
 };
@@ -278,7 +293,7 @@ function LinearProgressWithLabel(props: LinearProgressProps & { value: number })
   );
 }
 
-export const LinearWithValueLabel = () => {
+const LinearWithValueLabelInternal = () => {
   const classes = useStyles();
   const [progress, setProgress] = React.useState(10);
 
@@ -297,3 +312,5 @@ export const LinearWithValueLabel = () => {
     </div>
   );
 };
+
+export const LinearWithValueLabel = () => <LinearWithValueLabelInternal />;

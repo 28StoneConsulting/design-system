@@ -38,7 +38,7 @@ const GreenCheckbox = withStyles({
   checked: {},
 })((props: CheckboxProps) => <Checkbox color="default" {...props} />);
 
-export const BasicCheckboxes = () => {
+const BasicCheckboxesInternal = () => {
   const [checked, setChecked] = React.useState(true);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -59,7 +59,9 @@ export const BasicCheckboxes = () => {
   );
 };
 
-export const CheckboxWithFormControlLabel = () => {
+export const BasicCheckboxes = () => <BasicCheckboxesInternal />;
+
+const CheckboxWithFormControlLabelInternal = () => {
   const [state, setState] = React.useState({
     checkedA: true,
     checkedB: true,
@@ -112,7 +114,9 @@ export const CheckboxWithFormControlLabel = () => {
   );
 };
 
-export const CheckboxesGroup = () => {
+export const CheckboxWithFormControlLabel = () => <CheckboxWithFormControlLabelInternal />;
+
+const CheckboxesGrouplInternal = () => {
   const classes = useStyles();
   const [state, setState] = React.useState({
     gilad: true,
@@ -169,7 +173,9 @@ export const CheckboxesGroup = () => {
   );
 };
 
-export const FormControlLabelPosition = () => {
+export const CheckboxesGroup = () => <CheckboxesGrouplInternal />;
+
+const FormControlLabelPositionInternal = () => {
   return (
     <FormControl component="fieldset">
       <FormLabel component="legend">Label Placement</FormLabel>
@@ -187,3 +193,5 @@ export const FormControlLabelPosition = () => {
     </FormControl>
   );
 };
+
+export const FormControlLabelPosition = () => <FormControlLabelPositionInternal />;

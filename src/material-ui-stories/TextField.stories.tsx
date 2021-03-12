@@ -55,7 +55,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export const BasicTextFields = () => {
+const BasicTextFieldsInternal = () => {
   const classes = useStyles();
 
   return (
@@ -67,7 +67,9 @@ export const BasicTextFields = () => {
   );
 };
 
-export const Sizes = () => {
+export const BasicTextFields = () => <BasicTextFieldsInternal />;
+
+const SizesInternal = () => {
   const classes = useStyles();
 
   return (
@@ -88,7 +90,9 @@ export const Sizes = () => {
   );
 };
 
-export const Color = () => {
+export const Sizes = () => <SizesInternal />;
+
+const ColorInternal = () => {
   const classes = useStyles();
 
   return (
@@ -107,7 +111,9 @@ export const Color = () => {
   );
 };
 
-export const WithIcon = () => {
+export const Color = () => <ColorInternal />;
+
+const WithIconInternal = () => {
   const classes = useStyles();
 
   return (
@@ -149,7 +155,9 @@ export const WithIcon = () => {
   );
 };
 
-export const Select = () => {
+export const WithIcon = () => <WithIconInternal />;
+
+const SelectInternal = () => {
   const classes = useStyles();
   const [currency, setCurrency] = React.useState('EUR');
 
@@ -266,7 +274,9 @@ export const Select = () => {
   );
 };
 
-export const Multiline = () => {
+export const Select = () => <SelectInternal />;
+
+const MultilineInternal = () => {
   const classes = useStyles();
   const [value, setValue] = React.useState('Controlled');
 
@@ -343,3 +353,5 @@ export const Multiline = () => {
     </form>
   );
 };
+
+export const Multiline = () => <MultilineInternal />;

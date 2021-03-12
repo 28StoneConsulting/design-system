@@ -74,7 +74,7 @@ export default {
   component: Select,
 };
 
-export const SimpleSelect = () => {
+const SimpleSelectInternal = () => {
   const classes = useStyles();
   const [age, setAge] = React.useState('');
 
@@ -295,7 +295,9 @@ export const SimpleSelect = () => {
   );
 };
 
-export const MultipleSelect = () => {
+export const SimpleSelect = () => <SimpleSelectInternal />;
+
+const MultipleSelectInternal = () => {
   const classes = useStyles();
   const theme = useTheme();
   const [personName, setPersonName] = React.useState<string[]>([]);
@@ -436,7 +438,9 @@ export const MultipleSelect = () => {
   );
 };
 
-export const GroupedSelect = () => {
+export const MultipleSelect = () => <MultipleSelectInternal />;
+
+const GroupedSelectInternal = () => {
   const classes = useStyles();
 
   return (
@@ -472,3 +476,5 @@ export const GroupedSelect = () => {
     </div>
   );
 };
+
+export const GroupedSelect = () => <GroupedSelectInternal />;

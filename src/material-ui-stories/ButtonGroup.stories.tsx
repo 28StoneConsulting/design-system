@@ -18,7 +18,7 @@ export default {
   component: ButtonGroup,
 };
 
-export const BasicButtonGroup = () => (
+const BasicButtonGroupInternal = () => (
   <ButtonsWrapper>
     <ButtonGroup color="primary" aria-label="outlined primary button group">
       <Button>One</Button>
@@ -40,7 +40,9 @@ export const BasicButtonGroup = () => (
   </ButtonsWrapper>
 );
 
-export const SizesAndColors = () => (
+export const BasicButtonGroup = () => <BasicButtonGroupInternal />;
+
+const SizesAndColorsInternal = () => (
   <ButtonsWrapper>
     <ButtonGroup size="small" aria-label="small outlined button group">
       <Button>One</Button>
@@ -62,7 +64,9 @@ export const SizesAndColors = () => (
   </ButtonsWrapper>
 );
 
-export const VerticalGroup = () => (
+export const SizesAndColors = () => <SizesAndColorsInternal />;
+
+const VerticalGroupInternal = () => (
   <ButtonsWrapper>
     <ButtonGroup orientation="vertical" color="primary" aria-label="vertical outlined primary button group">
       <Button>One</Button>
@@ -92,7 +96,9 @@ export const VerticalGroup = () => (
   </ButtonsWrapper>
 );
 
-export const SplitButton = () => {
+export const VerticalGroup = () => <VerticalGroupInternal />;
+
+const SplitButtonInternal = () => {
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef<HTMLDivElement>(null);
   const [selectedIndex, setSelectedIndex] = React.useState(1);
@@ -166,6 +172,8 @@ export const SplitButton = () => {
     </Grid>
   );
 };
+
+export const SplitButton = () => <SplitButtonInternal />;
 
 const ButtonsWrapper = styled.div`
   display: 'flex';

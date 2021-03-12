@@ -1,7 +1,7 @@
 import { create } from '@storybook/theming/create';
 import blackLogo from '../src/assets/img/logo-black.svg';
 import whiteLogo from '../src/assets/img/logo-white.svg';
-import { themeLight, themeDark } from '../src/shared/theme';
+import { lightTheme as themeLight, darkTheme as themeDark } from '../src/shared/theme';
 
 const getThemeVars = (dark) => { 
   const mainBackgroundColor = dark ? themeDark.palette.mainBackgroundColor : themeLight.palette.mainBackgroundColor;

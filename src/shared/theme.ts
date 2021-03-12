@@ -1,5 +1,7 @@
 import { createMuiTheme, ThemeOptions } from '@material-ui/core/styles';
 import { BrandColors, MonochromeColors } from '@material-ui/core/styles/createPalette';
+import { Overrides } from '@material-ui/core/styles/overrides';
+import { deepMerge } from '../utils/deep-merge';
 declare module '@material-ui/core/styles/createPalette' {
   export type BrandColors = {
     orange: React.CSSProperties['color'];
@@ -152,9 +154,6 @@ const lightThemeOptions: ThemeOptions = {
     successBackground: '#E1FFD4',
     brand,
     monochrome,
-    background: {
-      paper: brand.white,
-    },
     mainBackgroundColor: brand.white,
     panelBackgroundColor: '#f4f2f1',
     subPanelBackgroundColor: brand.white,
@@ -172,10 +171,10 @@ const darkThemeOptions: ThemeOptions = {
   },
 };
 
-export const themeDark = createMuiTheme(darkThemeOptions);
-export const themeLight = createMuiTheme(lightThemeOptions);
+export const darkTheme = createMuiTheme(darkThemeOptions);
+export const lightTheme = createMuiTheme(lightThemeOptions);
 
-themeLight.overrides = {
+const lightOverrides: Overrides = {
   MuiCssBaseline: {
     '@global': {
       html: {
@@ -183,7 +182,7 @@ themeLight.overrides = {
       },
       body: {
         height: '100%',
-        backgroundColor: '#fff',
+        backgroundColor: lightThemeOptions.palette.mainBackgroundColor,
         fontFamily: 'Nunito, sans-serif',
       },
       'button, input, textarea, select': {
@@ -193,7 +192,7 @@ themeLight.overrides = {
         height: '100%',
       },
       '.MuiPickersBasePicker-container .MuiPickersDay-day:focus.MuiPickersDay-daySelected': {
-        backgroundColor: themeLight.palette.primary.main,
+        backgroundColor: lightTheme.palette.primary.main,
       },
       '.MuiAppBar-colorPrimary .MuiTabs-indicator': {
         backgroundColor: 'white',
@@ -202,7 +201,7 @@ themeLight.overrides = {
   },
   MuiCard: {
     root: {
-      padding: themeLight.spacing(2),
+      padding: lightTheme.spacing(2),
       boxShadow: 'none',
       border: 'solid 1px #d4d4d4',
     },
@@ -210,24 +209,24 @@ themeLight.overrides = {
   MuiCardActions: {
     root: {
       flexWrap: 'wrap',
-      paddingRight: themeLight.spacing(2),
-      paddingLeft: themeLight.spacing(2),
+      paddingRight: lightTheme.spacing(2),
+      paddingLeft: lightTheme.spacing(2),
     },
     spacing: {
       '& > *': {
-        marginBottom: themeLight.spacing(1),
+        marginBottom: lightTheme.spacing(1),
       },
       '& > :not(:first-child)': {
         marginLeft: 0,
       },
       '& > :not(:last-child)': {
-        marginRight: themeLight.spacing(1),
+        marginRight: lightTheme.spacing(1),
       },
     },
   },
   MuiChip: {
     root: {
-      height: 25,
+      height: 30,
       borderRadius: 0,
       fontSize: 12,
       textTransform: 'uppercase',
@@ -236,13 +235,13 @@ themeLight.overrides = {
   MuiTab: {
     root: {
       fontWeight: 600,
-      [themeLight.breakpoints.up('sm')]: {
+      [lightTheme.breakpoints.up('sm')]: {
         padding: '6px 20px',
         fontSize: 18,
       },
     },
     textColorPrimary: {
-      color: themeLight.palette.common.black,
+      color: lightTheme.palette.common.black,
     },
   },
 
@@ -251,7 +250,7 @@ themeLight.overrides = {
       border: '1px solid #d4d4d4',
       boxShadow: 'none',
       '&:not(:first-child)': {
-        marginTop: themeLight.spacing(3),
+        marginTop: lightTheme.spacing(3),
       },
       '&:before': {
         display: 'none',
@@ -296,4 +295,18 @@ themeLight.overrides = {
   },
 };
 
-export type Theme = typeof themeLight;
+const darkOverrides: Overrides = deepMerge({}, lightOverrides, {
+  MuiCssBaseline: {
+    '@global': {
+      body: {
+        color: lightTheme.palette.text.primary,
+        backgroundColor: darkThemeOptions.palette.mainBackgroundColor,
+      },
+    },
+  },
+} as Overrides);
+
+lightTheme.overrides = lightOverrides;
+darkTheme.overrides = darkOverrides;
+
+export type Theme = typeof lightTheme;

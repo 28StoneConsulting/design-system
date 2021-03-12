@@ -1,6 +1,6 @@
 import { ThemeProvider } from '@emotion/react';
 import ReactDOM from 'react-dom';
-import { themeLight } from '../../shared/theme';
+import { lightTheme } from '../../shared/theme';
 import { ReactAnchorProps } from '../../types';
 import { Link } from './Link';
 
@@ -11,7 +11,7 @@ const LinkWrapper = (props: ReactAnchorProps) => <a {...props} />;
 it('has a href attribute when rendering with linkWrapper', () => {
   const div = document.createElement('div');
   ReactDOM.render(
-    <ThemeProvider theme={themeLight}>
+    <ThemeProvider theme={lightTheme}>
       <Link href="https://learnstorybook.com" LinkWrapper={LinkWrapper}>
         Link Text
       </Link>

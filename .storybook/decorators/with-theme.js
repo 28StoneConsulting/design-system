@@ -3,10 +3,10 @@ import CssBaseline from '@material-ui/core/CssBaseline/CssBaseline';
 import { StylesProvider, MuiThemeProvider } from '@material-ui/core/styles';
 import { ThemeProvider, Global, css } from '@emotion/react';
 import { useDarkMode } from 'storybook-dark-mode';
-import { themeLight, themeDark } from '../../src/shared/theme';
+import { lightTheme, darkTheme } from '../../src/shared/theme';
 
 export default storyFn => {
-  const theme = useDarkMode() ? themeDark : themeLight
+  const theme = useDarkMode() ? darkTheme : lightTheme
   return (
   <>
     <Global styles={getGlobalStyle(theme)} />

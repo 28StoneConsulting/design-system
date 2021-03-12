@@ -1,4 +1,3 @@
-import { useTheme } from '@emotion/react';
 import AppBar from '@material-ui/core/AppBar';
 import Box from '@material-ui/core/Box';
 import Paper from '@material-ui/core/Paper';
@@ -244,8 +243,6 @@ export const IconLabelTabs = () => <IconLabelTabsInternal />;
 const VerticalTabsInternal = () => {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
-  const theme = useTheme();
-  console.log('theme:', theme);
 
   const handleChange = (event: React.ChangeEvent, newValue: number) => {
     setValue(newValue);

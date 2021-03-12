@@ -1,13 +1,12 @@
 import styled from '@emotion/styled';
-import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
-
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
-import PhotoCamera from '@material-ui/icons/PhotoCamera';
-import DeleteIcon from '@material-ui/icons/Delete';
+import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 import CloudUploadIcon from '@material-ui/icons/CloudUpload';
+import DeleteIcon from '@material-ui/icons/Delete';
 import KeyboardVoiceIcon from '@material-ui/icons/KeyboardVoice';
+import PhotoCamera from '@material-ui/icons/PhotoCamera';
 import SaveIcon from '@material-ui/icons/Save';
 import SendIcon from '@material-ui/icons/Send';
 
@@ -152,7 +151,7 @@ const SizesInternal = () => {
 
 export const Sizes = () => <SizesInternal />;
 
-export const UploadButtonInternal = () => {
+const UploadButtonInternal = () => {
   const classes = useStyles();
   return (
     <ButtonsWrapper>

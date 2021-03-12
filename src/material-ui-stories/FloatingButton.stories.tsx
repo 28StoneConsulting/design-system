@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export const FloatingActionButtons = () => {
+const FloatingActionButtonsInternal = () => {
   const classes = useStyles();
 
   return (
@@ -49,7 +49,9 @@ export const FloatingActionButtons = () => {
   );
 };
 
-export const Sizes = () => {
+export const FloatingActionButtons = () => <FloatingActionButtonsInternal />;
+
+const SizesInternal = () => {
   const classes = useStyles();
 
   return (
@@ -82,3 +84,5 @@ export const Sizes = () => {
     </div>
   );
 };
+
+export const Sizes = () => <SizesInternal />;

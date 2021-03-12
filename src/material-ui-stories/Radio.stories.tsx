@@ -22,7 +22,7 @@ const GreenRadio = withStyles({
   checked: {},
 })((props: RadioProps) => <Radio color="default" {...props} />);
 
-export const RadioButtons = () => {
+const RadioButtonsInternal = () => {
   const [selectedValue, setSelectedValue] = React.useState('a');
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -73,7 +73,9 @@ export const RadioButtons = () => {
   );
 };
 
-export const RadioButtonsGroup = () => {
+export const RadioButtons = () => <RadioButtonsInternal />;
+
+const RadioButtonsGroupInternal = () => {
   const [value, setValue] = React.useState('female');
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -92,3 +94,5 @@ export const RadioButtonsGroup = () => {
     </FormControl>
   );
 };
+
+export const RadioButtonsGroup = () => <RadioButtonsGroupInternal />;

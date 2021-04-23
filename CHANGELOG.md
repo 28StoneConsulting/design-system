@@ -1,3 +1,22 @@
+# v1.0.8 (Fri Apr 23 2021)
+
+#### 🐛 Bug Fix
+
+- added wrappers [#36](https://github.com/28StoneConsulting/design-system/pull/36) (arturs.langenfelds@28stone.com [@avalner](https://github.com/avalner) [@alangenfelds](https://github.com/alangenfelds))
+
+#### ⚠️ Pushed to `main`
+
+- Storybook update. Dark mode support for docs. ([@avalner](https://github.com/avalner))
+- build-docs task for publishing storybook to github pages ([@avalner](https://github.com/avalner))
+
+#### Authors: 3
+
+- Alexey Valner ([@avalner](https://github.com/avalner))
+- Arturs Langenfelds ([@alangenfelds](https://github.com/alangenfelds))
+- arturs.langenfelds@28stone.com (arturs.langenfelds@28stone.com)
+
+---
+
 # v1.0.7 (Fri Mar 12 2021)
 
 #### ⚠️ Pushed to `main`

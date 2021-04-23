@@ -1,11 +1,11 @@
 import { lightTheme, darkTheme } from './theme';
 import withTheme from './decorators/with-theme';
-
+import { DocsContainer } from './components/doc-container';
 // or global addParameters
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   docs: {
-    theme: lightTheme,
+    container: DocsContainer,
   },
   backgrounds: {
     disable: true,

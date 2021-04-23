@@ -1,6 +1,6 @@
 import { Meta, Typeset } from '@storybook/addon-docs/blocks';
-import { useDarkMode } from 'storybook-dark-mode';
 import { lightTheme as theme } from '../shared/theme';
+import ThemeColor from './theme-color.tsx';
 
 <Meta title="Typography" parameters={{ chromatic: { disable: true } }} />
 
@@ -12,20 +12,21 @@ import { lightTheme as theme } from '../shared/theme';
 
 **Weight:** 400(Regular)
 
-<Typeset
-  fontSizes={[
-    Number(theme.typography.size.s1),
-    Number(theme.typography.size.s2),
-    Number(theme.typography.size.s3),
-    Number(theme.typography.size.m1),
-    Number(theme.typography.size.m2),
-    Number(theme.typography.size.m3),
-    Number(theme.typography.size.l1),
-    Number(theme.typography.size.l2),
-    Number(theme.typography.size.l3),
-  ]}
-  fontWeight="400"
-/>
+<ThemeColor>
+  <Typeset
+    fontSizes={[
+      Number(theme.typography.size.s1),
+      Number(theme.typography.size.s2),
+      Number(theme.typography.size.s3),
+      Number(theme.typography.size.m1),
+      Number(theme.typography.size.m2),
+      Number(theme.typography.size.m3),
+      Number(theme.typography.size.l1),
+      Number(theme.typography.size.l2),
+      Number(theme.typography.size.l3),
+    ]}
+    fontWeight="400"
+  />
 
 **Weight:** 600(Semi Bold)
 
@@ -171,18 +172,19 @@ import { lightTheme as theme } from '../shared/theme';
 
 **Weight:** 900(Black)
 
-<Typeset
-  fontFamily="Calibri"
-  fontSizes={[
-    Number(theme.typography.size.s1),
-    Number(theme.typography.size.s2),
-    Number(theme.typography.size.s3),
-    Number(theme.typography.size.m1),
-    Number(theme.typography.size.m2),
-    Number(theme.typography.size.m3),
-    Number(theme.typography.size.l1),
-    Number(theme.typography.size.l2),
-    Number(theme.typography.size.l3),
-  ]}
-  fontWeight="900"
-/>
+  <Typeset
+    fontFamily="Calibri"
+    fontSizes={[
+      Number(theme.typography.size.s1),
+      Number(theme.typography.size.s2),
+      Number(theme.typography.size.s3),
+      Number(theme.typography.size.m1),
+      Number(theme.typography.size.m2),
+      Number(theme.typography.size.m3),
+      Number(theme.typography.size.l1),
+      Number(theme.typography.size.l2),
+      Number(theme.typography.size.l3),
+    ]}
+    fontWeight="900"
+  />
+</ThemeColor>

@@ -1,3 +1,18 @@
+# v1.0.10 (Sat Apr 24 2021)
+
+#### ⚠️ Pushed to `main`
+
+- docs build update ([@avalner](https://github.com/avalner))
+- SKIP_PREFLIGHT_CHECK=true for tests ([@avalner](https://github.com/avalner))
+- Merge branch 'main' of github.com:28StoneConsulting/design-system ([@avalner](https://github.com/avalner))
+- updates packagees and docs ([@avalner](https://github.com/avalner))
+
+#### Authors: 1
+
+- Alexey Valner ([@avalner](https://github.com/avalner))
+
+---
+
 # v1.0.9 (Fri Apr 23 2021)
 
 #### ⚠️ Pushed to `main`

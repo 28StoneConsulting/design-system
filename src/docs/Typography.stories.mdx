@@ -1,6 +1,5 @@
 import { Meta, Typeset } from '@storybook/addon-docs/blocks';
-import { lightTheme as theme } from '../shared/theme';
-import ThemeColor from './theme-color.tsx';
+import ThemeProvider from './theme-provider.tsx';
 
 <Meta title="Typography" parameters={{ chromatic: { disable: true } }} />
 
@@ -12,179 +11,217 @@ import ThemeColor from './theme-color.tsx';
 
 **Weight:** 400(Regular)
 
-<ThemeColor>
-  <Typeset
-    fontSizes={[
-      Number(theme.typography.size.s1),
-      Number(theme.typography.size.s2),
-      Number(theme.typography.size.s3),
-      Number(theme.typography.size.m1),
-      Number(theme.typography.size.m2),
-      Number(theme.typography.size.m3),
-      Number(theme.typography.size.l1),
-      Number(theme.typography.size.l2),
-      Number(theme.typography.size.l3),
-    ]}
-    fontWeight="400"
-  />
+<ThemeProvider>
+  {({ theme }) => (
+    <Typeset
+      fontSizes={[
+        Number(theme.typography.size.s1),
+        Number(theme.typography.size.s2),
+        Number(theme.typography.size.s3),
+        Number(theme.typography.size.m1),
+        Number(theme.typography.size.m2),
+        Number(theme.typography.size.m3),
+        Number(theme.typography.size.l1),
+        Number(theme.typography.size.l2),
+        Number(theme.typography.size.l3),
+      ]}
+      fontWeight="400"
+    />
+  )}
+</ThemeProvider>
 
 **Weight:** 600(Semi Bold)
 
-<Typeset
-  fontSizes={[
-    Number(theme.typography.size.s1),
-    Number(theme.typography.size.s2),
-    Number(theme.typography.size.s3),
-    Number(theme.typography.size.m1),
-    Number(theme.typography.size.m2),
-    Number(theme.typography.size.m3),
-    Number(theme.typography.size.l1),
-    Number(theme.typography.size.l2),
-    Number(theme.typography.size.l3),
-  ]}
-  fontWeight="600"
-/>
+<ThemeProvider>
+  {({ theme }) => (
+    <Typeset
+      fontSizes={[
+        Number(theme.typography.size.s1),
+        Number(theme.typography.size.s2),
+        Number(theme.typography.size.s3),
+        Number(theme.typography.size.m1),
+        Number(theme.typography.size.m2),
+        Number(theme.typography.size.m3),
+        Number(theme.typography.size.l1),
+        Number(theme.typography.size.l2),
+        Number(theme.typography.size.l3),
+      ]}
+      fontWeight="600"
+    />
+  )}
+</ThemeProvider>
 
 **Weight:** 700(Bold)
 
-<Typeset
-  fontSizes={[
-    Number(theme.typography.size.s1),
-    Number(theme.typography.size.s2),
-    Number(theme.typography.size.s3),
-    Number(theme.typography.size.m1),
-    Number(theme.typography.size.m2),
-    Number(theme.typography.size.m3),
-    Number(theme.typography.size.l1),
-    Number(theme.typography.size.l2),
-    Number(theme.typography.size.l3),
-  ]}
-  fontWeight="700"
-/>
+<ThemeProvider>
+  {({ theme }) => (
+    <Typeset
+      fontSizes={[
+        Number(theme.typography.size.s1),
+        Number(theme.typography.size.s2),
+        Number(theme.typography.size.s3),
+        Number(theme.typography.size.m1),
+        Number(theme.typography.size.m2),
+        Number(theme.typography.size.m3),
+        Number(theme.typography.size.l1),
+        Number(theme.typography.size.l2),
+        Number(theme.typography.size.l3),
+      ]}
+      fontWeight="700"
+    />
+  )}
+</ThemeProvider>
 
 **Weight:** 800(Extra Bold)
 
-<Typeset
-  fontSizes={[
-    Number(theme.typography.size.s1),
-    Number(theme.typography.size.s2),
-    Number(theme.typography.size.s3),
-    Number(theme.typography.size.m1),
-    Number(theme.typography.size.m2),
-    Number(theme.typography.size.m3),
-    Number(theme.typography.size.l1),
-    Number(theme.typography.size.l2),
-    Number(theme.typography.size.l3),
-  ]}
-  fontWeight="800"
-/>
+<ThemeProvider>
+  {({ theme }) => (
+    <Typeset
+      fontSizes={[
+        Number(theme.typography.size.s1),
+        Number(theme.typography.size.s2),
+        Number(theme.typography.size.s3),
+        Number(theme.typography.size.m1),
+        Number(theme.typography.size.m2),
+        Number(theme.typography.size.m3),
+        Number(theme.typography.size.l1),
+        Number(theme.typography.size.l2),
+        Number(theme.typography.size.l3),
+      ]}
+      fontWeight="800"
+    />
+  )}
+</ThemeProvider>
 
 **Weight:** 900(Black)
 
-<Typeset
-  fontSizes={[
-    Number(theme.typography.size.s1),
-    Number(theme.typography.size.s2),
-    Number(theme.typography.size.s3),
-    Number(theme.typography.size.m1),
-    Number(theme.typography.size.m2),
-    Number(theme.typography.size.m3),
-    Number(theme.typography.size.l1),
-    Number(theme.typography.size.l2),
-    Number(theme.typography.size.l3),
-  ]}
-  fontWeight="900"
-/>
+<ThemeProvider>
+  {({ theme }) => (
+    <Typeset
+      fontSizes={[
+        Number(theme.typography.size.s1),
+        Number(theme.typography.size.s2),
+        Number(theme.typography.size.s3),
+        Number(theme.typography.size.m1),
+        Number(theme.typography.size.m2),
+        Number(theme.typography.size.m3),
+        Number(theme.typography.size.l1),
+        Number(theme.typography.size.l2),
+        Number(theme.typography.size.l3),
+      ]}
+      fontWeight="900"
+    />
+  )}
+</ThemeProvider>
 
 ## Calibri
 
 **Weight:** 400(Regular)
 
-<Typeset
-  fontFamily="Calibri"
-  fontSizes={[
-    Number(theme.typography.size.s1),
-    Number(theme.typography.size.s2),
-    Number(theme.typography.size.s3),
-    Number(theme.typography.size.m1),
-    Number(theme.typography.size.m2),
-    Number(theme.typography.size.m3),
-    Number(theme.typography.size.l1),
-    Number(theme.typography.size.l2),
-    Number(theme.typography.size.l3),
-  ]}
-  fontWeight="400"
-/>
+<ThemeProvider>
+  {({ theme }) => (
+    <Typeset
+      fontFamily="Calibri"
+      fontSizes={[
+        Number(theme.typography.size.s1),
+        Number(theme.typography.size.s2),
+        Number(theme.typography.size.s3),
+        Number(theme.typography.size.m1),
+        Number(theme.typography.size.m2),
+        Number(theme.typography.size.m3),
+        Number(theme.typography.size.l1),
+        Number(theme.typography.size.l2),
+        Number(theme.typography.size.l3),
+      ]}
+      fontWeight="400"
+    />
+  )}
+</ThemeProvider>
 
 **Weight:** 600(Semi Bold)
 
-<Typeset
-  fontFamily="Calibri"
-  fontSizes={[
-    Number(theme.typography.size.s1),
-    Number(theme.typography.size.s2),
-    Number(theme.typography.size.s3),
-    Number(theme.typography.size.m1),
-    Number(theme.typography.size.m2),
-    Number(theme.typography.size.m3),
-    Number(theme.typography.size.l1),
-    Number(theme.typography.size.l2),
-    Number(theme.typography.size.l3),
-  ]}
-  fontWeight="600"
-/>
+<ThemeProvider>
+  {({ theme }) => (
+    <Typeset
+      fontFamily="Calibri"
+      fontSizes={[
+        Number(theme.typography.size.s1),
+        Number(theme.typography.size.s2),
+        Number(theme.typography.size.s3),
+        Number(theme.typography.size.m1),
+        Number(theme.typography.size.m2),
+        Number(theme.typography.size.m3),
+        Number(theme.typography.size.l1),
+        Number(theme.typography.size.l2),
+        Number(theme.typography.size.l3),
+      ]}
+      fontWeight="600"
+    />
+  )}
+</ThemeProvider>
 
 **Weight:** 700(Bold)
 
-<Typeset
-  fontFamily="Calibri"
-  fontSizes={[
-    Number(theme.typography.size.s1),
-    Number(theme.typography.size.s2),
-    Number(theme.typography.size.s3),
-    Number(theme.typography.size.m1),
-    Number(theme.typography.size.m2),
-    Number(theme.typography.size.m3),
-    Number(theme.typography.size.l1),
-    Number(theme.typography.size.l2),
-    Number(theme.typography.size.l3),
-  ]}
-  fontWeight="700"
-/>
+<ThemeProvider>
+  {({ theme }) => (
+    <Typeset
+      fontFamily="Calibri"
+      fontSizes={[
+        Number(theme.typography.size.s1),
+        Number(theme.typography.size.s2),
+        Number(theme.typography.size.s3),
+        Number(theme.typography.size.m1),
+        Number(theme.typography.size.m2),
+        Number(theme.typography.size.m3),
+        Number(theme.typography.size.l1),
+        Number(theme.typography.size.l2),
+        Number(theme.typography.size.l3),
+      ]}
+      fontWeight="700"
+    />
+  )}
+</ThemeProvider>
 
 **Weight:** 800(Extra Bold)
 
-<Typeset
-  fontFamily="Calibri"
-  fontSizes={[
-    Number(theme.typography.size.s1),
-    Number(theme.typography.size.s2),
-    Number(theme.typography.size.s3),
-    Number(theme.typography.size.m1),
-    Number(theme.typography.size.m2),
-    Number(theme.typography.size.m3),
-    Number(theme.typography.size.l1),
-    Number(theme.typography.size.l2),
-    Number(theme.typography.size.l3),
-  ]}
-  fontWeight="800"
-/>
+<ThemeProvider>
+  {({ theme }) => (
+    <Typeset
+      fontFamily="Calibri"
+      fontSizes={[
+        Number(theme.typography.size.s1),
+        Number(theme.typography.size.s2),
+        Number(theme.typography.size.s3),
+        Number(theme.typography.size.m1),
+        Number(theme.typography.size.m2),
+        Number(theme.typography.size.m3),
+        Number(theme.typography.size.l1),
+        Number(theme.typography.size.l2),
+        Number(theme.typography.size.l3),
+      ]}
+      fontWeight="800"
+    />
+  )}
+</ThemeProvider>
 
 **Weight:** 900(Black)
 
-  <Typeset
-    fontFamily="Calibri"
-    fontSizes={[
-      Number(theme.typography.size.s1),
-      Number(theme.typography.size.s2),
-      Number(theme.typography.size.s3),
-      Number(theme.typography.size.m1),
-      Number(theme.typography.size.m2),
-      Number(theme.typography.size.m3),
-      Number(theme.typography.size.l1),
-      Number(theme.typography.size.l2),
-      Number(theme.typography.size.l3),
-    ]}
-    fontWeight="900"
-  />
-</ThemeColor>
+<ThemeProvider>
+  {({ theme }) => (
+    <Typeset
+      fontFamily="Calibri"
+      fontSizes={[
+        Number(theme.typography.size.s1),
+        Number(theme.typography.size.s2),
+        Number(theme.typography.size.s3),
+        Number(theme.typography.size.m1),
+        Number(theme.typography.size.m2),
+        Number(theme.typography.size.m3),
+        Number(theme.typography.size.l1),
+        Number(theme.typography.size.l2),
+        Number(theme.typography.size.l3),
+      ]}
+      fontWeight="900"
+    />
+  )}
+</ThemeProvider>

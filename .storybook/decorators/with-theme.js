@@ -5,9 +5,11 @@ import { ThemeProvider, Global, css } from '@emotion/react';
 import { useDarkMode } from 'storybook-dark-mode';
 import { lightTheme, darkTheme } from '../../src/shared/theme';
 
-export default storyFn => {
+export default (storyFn, context) => {
   const theme = useDarkMode() ? darkTheme : lightTheme
-  return (
+  const isInDocs = context.viewMode === 'docs';
+  
+  return isInDocs ? storyFn() : (
   <>
     <Global styles={getGlobalStyle(theme)} />
     <StylesProvider injectFirst>

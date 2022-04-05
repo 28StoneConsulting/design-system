@@ -71,7 +71,7 @@ declare module '@material-ui/core/styles/createTypography' {
 }
 
 const brand: BrandColors = {
-  orange: '#F05A28',
+  orange: '#DE582A',
   darkGrey: '#4A4A4A',
   lightGrey: '#D9D3D1',
   black: '#000',

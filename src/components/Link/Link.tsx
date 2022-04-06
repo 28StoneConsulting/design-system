@@ -140,10 +140,17 @@ const LinkButton = styled.button`
 const applyStyle = LinkWrapper => {
   return (
     LinkWrapper &&
-    styled(({ // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      containsIcon, inverse, nochrome, secondary, tertiary, ...linkWrapperRest }) => (
-      <LinkWrapper {...linkWrapperRest} />
-    ))`
+    styled(
+      ({
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        containsIcon,
+        inverse,
+        nochrome,
+        secondary,
+        tertiary,
+        ...linkWrapperRest
+      }) => <LinkWrapper {...linkWrapperRest} />,
+    )`
       ${linkStyles};
     `
   );

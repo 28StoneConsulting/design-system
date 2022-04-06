@@ -291,16 +291,17 @@ export function Button<P = null>({
     </Fragment>
   );
 
-  const StyledButtonWrapper = (React.useMemo(() => applyStyle(ButtonWrapper), [
-    ButtonWrapper,
-  ]) as unknown) as ComponentType<ButtonProps<P>>;
+  const StyledButtonWrapper = React.useMemo(
+    () => applyStyle(ButtonWrapper),
+    [ButtonWrapper],
+  ) as unknown as ComponentType<ButtonProps<P>>;
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  let SelectedButton: any = (StyledButton as unknown) as ComponentType<ButtonProps<P>>;
+  let SelectedButton: any = StyledButton as unknown as ComponentType<ButtonProps<P>>;
   if (ButtonWrapper) {
     SelectedButton = StyledButtonWrapper;
   } else if (isLink) {
-    SelectedButton = (ButtonLink as unknown) as ComponentType<ButtonProps<P>>;
+    SelectedButton = ButtonLink as unknown as ComponentType<ButtonProps<P>>;
   }
 
   return (

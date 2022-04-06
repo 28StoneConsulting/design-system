@@ -1,3 +1,16 @@
+# v1.0.13 (Wed Apr 06 2022)
+
+#### ⚠️ Pushed to `main`
+
+- Update yarn lock ([@mattg-28stone](https://github.com/mattg-28stone))
+- Updated orange brand colour ([@mattg-28stone](https://github.com/mattg-28stone))
+
+#### Authors: 1
+
+- Matthew Gleed ([@mattg-28stone](https://github.com/mattg-28stone))
+
+---
+
 # v1.0.12 (Mon Apr 26 2021)
 
 #### ⚠️ Pushed to `main`

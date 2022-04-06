@@ -1,5 +1,25 @@
 # v1.0.13 (Wed Apr 06 2022)
 
+#### 🐛 Bug Fix
+
+- revert version number [#48](https://github.com/28StoneConsulting/design-system/pull/48) ([@mattg-28stone](https://github.com/mattg-28stone))
+- bump version number [#47](https://github.com/28StoneConsulting/design-system/pull/47) ([@mattg-28stone](https://github.com/mattg-28stone))
+- revert version number [#46](https://github.com/28StoneConsulting/design-system/pull/46) ([@mattg-28stone](https://github.com/mattg-28stone))
+- update changelog and revert version number [#45](https://github.com/28StoneConsulting/design-system/pull/45) ([@mattg-28stone](https://github.com/mattg-28stone))
+- update yarn lock [#44](https://github.com/28StoneConsulting/design-system/pull/44) ([@mattg-28stone](https://github.com/mattg-28stone))
+- recreate the yarn lock file and lint the project [#43](https://github.com/28StoneConsulting/design-system/pull/43) ([@mattg-28stone](https://github.com/mattg-28stone))
+- update estree version [#41](https://github.com/28StoneConsulting/design-system/pull/41) ([@mattg-28stone](https://github.com/mattg-28stone))
+- bump version number and remove package-lock [#40](https://github.com/28StoneConsulting/design-system/pull/40) ([@mattg-28stone](https://github.com/mattg-28stone))
+- updated orange brand colour [#39](https://github.com/28StoneConsulting/design-system/pull/39) ([@mattg-28stone](https://github.com/mattg-28stone))
+
+#### Authors: 1
+
+- [@mattg-28stone](https://github.com/mattg-28stone)
+
+---
+
+# v1.0.13 (Wed Apr 06 2022)
+
 #### ⚠️ Pushed to `main`
 
 - Update yarn lock ([@mattg-28stone](https://github.com/mattg-28stone))

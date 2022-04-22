@@ -1,4 +1,4 @@
-import { createMuiTheme, ThemeOptions } from '@material-ui/core/styles';
+import { createTheme, ThemeOptions } from '@material-ui/core/styles';
 import { BrandColors, MonochromeColors } from '@material-ui/core/styles/createPalette';
 import { Overrides } from '@material-ui/core/styles/overrides';
 import { deepMerge } from '../utils/deep-merge';
@@ -172,8 +172,8 @@ const darkThemeOptions: ThemeOptions = deepMerge({}, lightThemeOptions, {
   },
 } as ThemeOptions);
 
-export const darkTheme = createMuiTheme(darkThemeOptions);
-export const lightTheme = createMuiTheme(lightThemeOptions);
+export const darkTheme = createTheme(darkThemeOptions);
+export const lightTheme = createTheme(lightThemeOptions);
 
 const lightOverrides: Overrides = {
   MuiCssBaseline: {

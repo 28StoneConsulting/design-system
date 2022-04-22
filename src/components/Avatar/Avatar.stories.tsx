@@ -25,12 +25,12 @@ Sizes.args = {
   src: 'https://avatars2.githubusercontent.com/u/132554',
 };
 
-export const Initials = args => (
+export const Initials = () => (
   <div>
-    <Avatar {...args} username="Tom Coleman" />
-    <Avatar {...args} username="Dominic Nguyen" />
-    <Avatar {...args} username="Kyle Suss" />
-    <Avatar {...args} username="Michael Shilman" />
+    <Avatar username="Tom Coleman" />
+    <Avatar username="Dominic Nguyen" />
+    <Avatar username="Kyle Suss" />
+    <Avatar username="Michael Shilman" />
   </div>
 );
 
@@ -46,10 +46,10 @@ Loading.args = {
   loading: true,
 };
 
-export const Large = args => (
+export const Large = () => (
   <div>
-    <Avatar {...args} loading size="large" />
-    <Avatar {...args} size="large" username="Tom Coleman" />
-    <Avatar {...args} size="large" username="Tom Coleman" src="https://avatars2.githubusercontent.com/u/132554" />
+    <Avatar loading size="large" />
+    <Avatar size="large" username="Tom Coleman" />
+    <Avatar size="large" username="Tom Coleman" src="https://avatars2.githubusercontent.com/u/132554" />
   </div>
 );

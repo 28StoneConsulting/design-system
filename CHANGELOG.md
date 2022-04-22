@@ -1,3 +1,15 @@
+# v1.0.14 (Fri Apr 22 2022)
+
+#### 🐛 Bug Fix
+
+- update createTheme import [#49](https://github.com/28StoneConsulting/design-system/pull/49) ([@mattg-28stone](https://github.com/mattg-28stone))
+
+#### Authors: 1
+
+- [@mattg-28stone](https://github.com/mattg-28stone)
+
+---
+
 # v1.0.13 (Wed Apr 06 2022)
 
 #### 🐛 Bug Fix

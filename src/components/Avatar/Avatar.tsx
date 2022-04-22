@@ -14,8 +14,8 @@ export const sizes = {
 
 export type AvatarSize = keyof typeof sizes;
 
-const Image = styled.div<{ $loading: boolean; size: AvatarSize; src: string }>`
-  background: ${p => (!p.$loading ? 'transparent' : p.theme.palette.monochrome.light)};
+const Image = styled.div<{ loading: boolean; size: AvatarSize; src: string }>`
+  background: ${p => (!p.loading ? 'transparent' : p.theme.palette.monochrome.light)};
   border-radius: 50%;
   display: inline-block;
   vertical-align: top;
@@ -53,7 +53,7 @@ const Image = styled.div<{ $loading: boolean; size: AvatarSize; src: string }>`
   ${p =>
     !p.src &&
     css`
-      background: ${!p.$loading && '#37D5D3'};
+      background: ${!p.loading && '#37D5D3'};
     `}
 
   img {
@@ -131,7 +131,7 @@ export function Avatar({ loading, username, src, size, ...props }: AvatarProps) 
   }
 
   return (
-    <Image size={size} $loading={loading} src={src} {...a11yProps} {...props}>
+    <Image size={size} loading={loading} src={src} {...a11yProps} {...props}>
       {avatarFigure}
     </Image>
   );

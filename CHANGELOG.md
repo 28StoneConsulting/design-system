@@ -1,3 +1,15 @@
+# v1.0.17 (Mon Apr 25 2022)
+
+#### 🐛 Bug Fix
+
+- fix issue with avatar loading prop [#52](https://github.com/28StoneConsulting/design-system/pull/52) ([@mattg-28stone](https://github.com/mattg-28stone))
+
+#### Authors: 1
+
+- [@mattg-28stone](https://github.com/mattg-28stone)
+
+---
+
 # v1.0.16 (Fri Apr 22 2022)
 
 #### 🐛 Bug Fix

@@ -53,6 +53,18 @@ Clone the [28SDS GitHub project](https://github.com/28StoneConsulting/design-sys
 
 `yarn && yarn storybook`
 
+### **Deployment**
+
+`yarn build-storybook`
+
+`yarn build-docs`
+
+Push changes and PR into main.
+
+The version number will bump automatically.
+
+The CHANGELOG.md will update automatically.
+
 ### **Resources**
 
 - [GitHub repository](https://github.com/28StoneConsulting/design-system)

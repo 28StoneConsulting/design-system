@@ -1,3 +1,15 @@
+# v1.0.18 (Wed May 25 2022)
+
+#### 🐛 Bug Fix
+
+- rebuild storybook and docs and update readme [#53](https://github.com/28StoneConsulting/design-system/pull/53) ([@mattg-28stone](https://github.com/mattg-28stone))
+
+#### Authors: 1
+
+- [@mattg-28stone](https://github.com/mattg-28stone)
+
+---
+
 # v1.0.17 (Mon Apr 25 2022)
 
 #### 🐛 Bug Fix

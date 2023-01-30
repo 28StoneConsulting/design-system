@@ -1,11 +1,11 @@
+import { green } from '@mui/material/colors';
+import FormControl from '@mui/material/FormControl';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import FormLabel from '@mui/material/FormLabel';
+import Radio, { RadioProps } from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import { withStyles } from '@mui/styles';
 import React from 'react';
-import RadioGroup from '@material-ui/core/RadioGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormControl from '@material-ui/core/FormControl';
-import FormLabel from '@material-ui/core/FormLabel';
-import { withStyles } from '@material-ui/core/styles';
-import { green } from '@material-ui/core/colors';
-import Radio, { RadioProps } from '@material-ui/core/Radio';
 
 export default {
   title: 'Material UI/Radio',

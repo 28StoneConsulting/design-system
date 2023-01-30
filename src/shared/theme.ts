@@ -1,8 +1,7 @@
-import { createTheme, ThemeOptions } from '@material-ui/core/styles';
-import { BrandColors, MonochromeColors } from '@material-ui/core/styles/createPalette';
-import { Overrides } from '@material-ui/core/styles/overrides';
+import { BrandColors, Components, createTheme, MonochromeColors, ThemeOptions } from '@mui/material/styles';
 import { deepMerge } from '../utils/deep-merge';
-declare module '@material-ui/core/styles/createPalette' {
+
+declare module '@mui/material/styles' {
   export type BrandColors = {
     orange: React.CSSProperties['color'];
     darkGrey: React.CSSProperties['color'];
@@ -48,7 +47,7 @@ declare module '@material-ui/core/styles/createPalette' {
     monochrome: MonochromeColors;
   }
 }
-declare module '@material-ui/core/styles/createTypography' {
+declare module '@mui/material/styles/createTypography' {
   export type TypographySize = {
     s1: string;
     s2: string;
@@ -162,7 +161,7 @@ const lightThemeOptions: ThemeOptions = {
 
 const darkThemeOptions: ThemeOptions = deepMerge({}, lightThemeOptions, {
   palette: {
-    type: 'dark',
+    mode: 'dark',
     background: {
       paper: '#333333',
     },
@@ -175,9 +174,9 @@ const darkThemeOptions: ThemeOptions = deepMerge({}, lightThemeOptions, {
 export const darkTheme = createTheme(darkThemeOptions);
 export const lightTheme = createTheme(lightThemeOptions);
 
-const lightOverrides: Overrides = {
+const lightOverrides: Components = {
   MuiCssBaseline: {
-    '@global': {
+    styleOverrides: {
       html: {
         height: '100%',
       },
@@ -201,110 +200,80 @@ const lightOverrides: Overrides = {
     },
   },
   MuiCard: {
-    root: {
-      padding: lightTheme.spacing(2),
-      boxShadow: 'none',
-      border: 'solid 1px #d4d4d4',
+    styleOverrides: {
+      root: {
+        padding: lightTheme.spacing(2),
+        boxShadow: 'none',
+        border: 'solid 1px #d4d4d4',
+      },
     },
   },
   MuiCardActions: {
-    root: {
-      flexWrap: 'wrap',
-      paddingRight: lightTheme.spacing(2),
-      paddingLeft: lightTheme.spacing(2),
-    },
-    spacing: {
-      '& > *': {
-        marginBottom: lightTheme.spacing(1),
+    styleOverrides: {
+      root: {
+        flexWrap: 'wrap',
+        paddingRight: lightTheme.spacing(2),
+        paddingLeft: lightTheme.spacing(2),
       },
-      '& > :not(:first-child)': {
-        marginLeft: 0,
-      },
-      '& > :not(:last-child)': {
-        marginRight: lightTheme.spacing(1),
+      spacing: {
+        '& > *': {
+          marginBottom: lightTheme.spacing(1),
+        },
+        '& > :not(:first-child)': {
+          marginLeft: 0,
+        },
+        '& > :not(:last-child)': {
+          marginRight: lightTheme.spacing(1),
+        },
       },
     },
   },
   MuiChip: {
-    root: {
-      height: 30,
-      borderRadius: 0,
-      fontSize: 12,
-      textTransform: 'uppercase',
+    styleOverrides: {
+      root: {
+        height: 30,
+        borderRadius: 0,
+        fontSize: 12,
+        textTransform: 'uppercase',
+      },
     },
   },
   MuiTab: {
-    root: {
-      fontWeight: 600,
-      [lightTheme.breakpoints.up('sm')]: {
-        padding: '6px 20px',
-        fontSize: 18,
+    styleOverrides: {
+      root: {
+        fontWeight: 600,
+        [lightTheme.breakpoints.up('sm')]: {
+          padding: '6px 20px',
+          fontSize: 18,
+        },
       },
-    },
-  },
-
-  MuiExpansionPanel: {
-    root: {
-      border: '1px solid #d4d4d4',
-      boxShadow: 'none',
-      '&:not(:first-child)': {
-        marginTop: lightTheme.spacing(3),
-      },
-      '&:before': {
-        display: 'none',
-      },
-      '&$expanded': {
-        margin: 'auto',
-      },
-    },
-  },
-  MuiExpansionPanelSummary: {
-    root: {
-      borderBottom: '1px solid #d4d4d4',
-      padding: '0 15px',
-      marginBottom: -1,
-      height: 40,
-      minHeight: 40,
-      '&$expanded': {
-        height: 40,
-        minHeight: 40,
-      },
-    },
-    content: {
-      margin: '5px 0',
-
-      '&$expanded': {
-        margin: '5px 0',
-      },
-    },
-  },
-  MuiExpansionPanelDetails: {
-    root: {
-      display: 'flex',
-      flexDirection: 'column',
     },
   },
   MuiLink: {
-    root: {
-      '&:hover': {
-        color: 'inherit',
+    styleOverrides: {
+      root: {
+        '&:hover': {
+          color: 'inherit',
+        },
       },
     },
   },
 };
 
-const darkOverrides: Overrides = deepMerge({}, lightOverrides, {
+const darkOverrides: Components = deepMerge({}, lightOverrides, {
   MuiCssBaseline: {
-    '@global': {
-      body: {
-        color: darkTheme.palette.text.primary,
-        backgroundColor: darkThemeOptions.palette.mainBackgroundColor,
+    styleOverrides: {
+      '@global': {
+        body: {
+          color: darkTheme.palette.text.primary,
+          backgroundColor: darkThemeOptions.palette.mainBackgroundColor,
+        },
       },
     },
   },
-} as Overrides);
+} as Components);
 
-lightTheme.overrides = lightOverrides;
-darkTheme.overrides = darkOverrides;
+lightTheme.components = lightOverrides;
+darkTheme.components = darkOverrides;
 
 export type Theme = typeof lightTheme;

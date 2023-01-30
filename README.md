@@ -14,9 +14,44 @@ Add 28SDS to your project.
 or
 `yarn add @28stoneconsulting/design-system`
 
+To use the legacy v4 of material-ui:
+
+`npm install --save @28stoneconsulting/design-system@1.0.18`
+or
+`yarn add @28stoneconsulting/design-system@1.0.18`
+
 ### **Use**
 
 28SDS is using material-ui theming approach and emotion for syling. Add the following imports into the ts/js file:
+
+```js
+import CssBaseline from '@mui/material/CssBaseline';
+import { ThemeProvider as MuiThemeProvider, StyledEngineProvider } from '@mui/material/styles';
+import { themeDark as theme, Button, Badge } from '@28stoneconsulting/design-system';
+import { ThemeProvider } from '@emotion/react';
+```
+
+and use them like so
+
+```jsx
+const example = () => (
+  <StyledEngineProvider injectFirst>
+    <MuiThemeProvider theme={theme}>
+      <CssBaseline />
+      <ThemeProvider theme={theme}>
+        <div>
+          <Button appearance="primary" onClick={() => {}}>
+            Do something
+          </Button>
+          <Badge onClick={() => {}}>Cool</Badge>
+        </div>
+      </ThemeProvider>
+    </MuiThemeProvider>
+  </StyledEngineProvider>
+);
+```
+
+For legacy version <=1.0.18 use 28SDS like so:
 
 ```js
 import CssBaseline from '@material-ui/core/CssBaseline/CssBaseline';

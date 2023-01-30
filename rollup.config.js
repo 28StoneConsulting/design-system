@@ -1,6 +1,7 @@
-import babel from '@rollup/plugin-babel';
+import { babel } from '@rollup/plugin-babel';
+import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
-import { terser } from 'rollup-plugin-terser';
+import terser from '@rollup/plugin-terser';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 
 const extensions = ['.js', '.ts', '.tsx'];
@@ -9,13 +10,13 @@ export default {
   input: 'src/index.ts',
   output: [
     {
-      file: 'build/bundles/bundle.esm.js',
-      format: 'esm',
+      file: 'build/bundles/bundle.cjs.js',
+      format: 'cjs',
       sourcemap: true,
     },
     {
-      file: 'build/bundles/bundle.esm.min.js',
-      format: 'esm',
+      file: 'build/bundles/bundle.cjs.min.js',
+      format: 'cjs',
       plugins: [terser()],
       sourcemap: true,
     },
@@ -42,5 +43,6 @@ export default {
       extensions,
       exclude: './node_modules/**',
     }),
+    commonjs(),
   ],
 };

@@ -1,7 +1,8 @@
 import React from 'react';
-import CssBaseline from '@material-ui/core/CssBaseline/CssBaseline';
-import { StylesProvider, MuiThemeProvider } from '@material-ui/core/styles';
-import { ThemeProvider, Global, css } from '@emotion/react';
+import CssBaseline from '@mui/material/CssBaseline/CssBaseline';
+import {  StylesProvider } from '@mui/styles';
+import {  ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
+import {  Global, css } from '@emotion/react';
 import { useDarkMode } from 'storybook-dark-mode';
 import { lightTheme, darkTheme } from '../../src/shared/theme';
 
@@ -13,12 +14,12 @@ export default (storyFn, context) => {
   <>
     <Global styles={getGlobalStyle(theme)} />
     <StylesProvider injectFirst>
-      <MuiThemeProvider theme={theme}>
-        <CssBaseline />
+      <StyledEngineProvider injectFirst>
+      <CssBaseline />
         <ThemeProvider theme={theme}>
-          {storyFn()}
+            {storyFn()}
         </ThemeProvider>
-      </MuiThemeProvider>
+      </StyledEngineProvider>
     </StylesProvider>
   </>
   );

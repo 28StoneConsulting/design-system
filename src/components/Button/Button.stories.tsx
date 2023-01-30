@@ -100,7 +100,7 @@ AnchorWrapper.storyName = 'Anchor Wrapper';
 
 const ButtonsWrapper = styled.div`
   & > * {
-    margin-right: ${p => p.theme.spacing(1)}px;
-    margin-bottom: ${p => p.theme.spacing(1)}px;
+    margin-right: ${p => p.theme.spacing(1)};
+    margin-bottom: ${p => p.theme.spacing(1)};
   }
 `;

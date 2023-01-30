@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { darken, fade } from '@material-ui/core';
+import { alpha, darken } from '@mui/material';
 import PropTypes from 'prop-types';
 import React, { ComponentProps, ComponentType, Fragment } from 'react';
 import { easing } from '../../shared/animation';
@@ -46,7 +46,7 @@ const StyledButton = styled.button<StyledButtonProps>`
   cursor: pointer;
   display: inline-block;
   overflow: hidden;
-  padding: ${props => (props.size === SIZES.SMALL ? '8px 16px' : '13px 20px')};
+  padding: ${p => (p.size === SIZES.SMALL ? '8px 16px' : '13px 20px')};
   position: relative;
   text-align: center;
   text-decoration: none;
@@ -75,11 +75,11 @@ const StyledButton = styled.button<StyledButtonProps>`
       }
 
       &:focus {
-        box-shadow: ${fade(p.theme.palette.primary.main, 0.4)} 0 1px 9px 2px;
+        box-shadow: ${alpha(p.theme.palette.primary.main, 0.4)} 0 1px 9px 2px;
       }
 
       &:focus:hover {
-        box-shadow: ${fade(p.theme.palette.primary.main, 0.2)} 0 8px 18px 0px;
+        box-shadow: ${alpha(p.theme.palette.primary.main, 0.2)} 0 8px 18px 0px;
       }
     `}
 
@@ -170,10 +170,10 @@ const StyledButton = styled.button<StyledButtonProps>`
           box-shadow: rgba(0, 0, 0, 0.1) 0 0 0 3em inset;
         }
         &:focus {
-          box-shadow: ${fade(p.theme.palette.primary.main, 0.4)} 0 1px 9px 2px;
+          box-shadow: ${alpha(p.theme.palette.primary.main, 0.4)} 0 1px 9px 2px;
         }
         &:focus:hover {
-          box-shadow: ${fade(p.theme.palette.primary.main, 0.2)} 0 8px 18px 0px;
+          box-shadow: ${alpha(p.theme.palette.primary.main, 0.2)} 0 8px 18px 0px;
         }
       `}
     `}
@@ -193,10 +193,10 @@ const StyledButton = styled.button<StyledButtonProps>`
           box-shadow: rgba(0, 0, 0, 0.1) 0 0 0 3em inset;
         }
         &:focus {
-          box-shadow: ${fade(p.theme.palette.secondary.main, 0.4)} 0 1px 9px 2px;
+          box-shadow: ${alpha(p.theme.palette.secondary.main, 0.4)} 0 1px 9px 2px;
         }
         &:focus:hover {
-          box-shadow: ${fade(p.theme.palette.secondary.main, 0.2)} 0 8px 18px 0px;
+          box-shadow: ${alpha(p.theme.palette.secondary.main, 0.2)} 0 8px 18px 0px;
         }
       `}
     `}
@@ -219,11 +219,11 @@ const StyledButton = styled.button<StyledButtonProps>`
       }
       &:focus {
         box-shadow: ${p.theme.palette.primary.main} 0 0 0 1px inset,
-          ${fade(p.theme.palette.primary.main, 0.4)} 0 1px 9px 2px;
+          ${alpha(p.theme.palette.primary.main, 0.4)} 0 1px 9px 2px;
       }
       &:focus:hover {
         box-shadow: ${p.theme.palette.primary.main} 0 0 0 1px inset,
-          ${fade(p.theme.palette.primary.main, 0.2)} 0 8px 18px 0px;
+          ${alpha(p.theme.palette.primary.main, 0.2)} 0 8px 18px 0px;
       }
     `};
 
@@ -245,11 +245,11 @@ const StyledButton = styled.button<StyledButtonProps>`
       }
       &:focus {
         box-shadow: ${p.theme.palette.secondary.main} 0 0 0 1px inset,
-          ${fade(p.theme.palette.secondary.main, 0.4)} 0 1px 9px 2px;
+          ${alpha(p.theme.palette.secondary.main, 0.4)} 0 1px 9px 2px;
       }
       &:focus:hover {
         box-shadow: ${p.theme.palette.secondary.main} 0 0 0 1px inset,
-          ${fade(p.theme.palette.secondary.main, 0.2)} 0 8px 18px 0px;
+          ${alpha(p.theme.palette.secondary.main, 0.2)} 0 8px 18px 0px;
       }
     `};
 `;

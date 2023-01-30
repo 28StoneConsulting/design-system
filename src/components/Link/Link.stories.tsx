@@ -58,7 +58,7 @@ export const All = () => (
       has a LinkWrapper like GatsbyLink or NextLink
     </Link>
     <br />
-    <CustomLink tertiary LinkWrapper={StoryLinkWrapper} href="http://storybook.js.org">
+    <CustomLink LinkWrapper={StoryLinkWrapper} href="http://storybook.js.org">
       has a LinkWrapper like GatsbyLink or NextLink with custom styling
     </CustomLink>
   </div>

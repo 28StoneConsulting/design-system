@@ -40,6 +40,6 @@ WithIcon.args = {
 
 const AllBadgesWrapper = styled.div`
   & > * {
-    margin-right: ${p => p.theme.spacing(1)}px;
+    margin-right: ${p => p.theme.spacing(1)};
   }
 `;

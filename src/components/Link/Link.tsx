@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { darken } from '@material-ui/core';
+import { darken } from '@mui/material';
 import PropTypes from 'prop-types';
 import { ComponentProps, ComponentType, Fragment } from 'react';
 import { Icon } from '../Icon/Icon';

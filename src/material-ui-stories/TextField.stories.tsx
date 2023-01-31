@@ -1,13 +1,14 @@
+import AccountCircle from '@mui/icons-material/AccountCircle';
+import FormControl from '@mui/material/FormControl';
+import Grid from '@mui/material/Grid';
+import Input from '@mui/material/Input';
+import InputAdornment from '@mui/material/InputAdornment';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import { Theme } from '@mui/material/styles';
+import TextField from '@mui/material/TextField';
+import { createStyles, makeStyles } from '@mui/styles';
 import React from 'react';
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
-import MenuItem from '@material-ui/core/MenuItem';
-import FormControl from '@material-ui/core/FormControl';
-import Input from '@material-ui/core/Input';
-import InputLabel from '@material-ui/core/InputLabel';
-import InputAdornment from '@material-ui/core/InputAdornment';
-import Grid from '@material-ui/core/Grid';
-import AccountCircle from '@material-ui/icons/AccountCircle';
 
 const currencies = [
   {
@@ -291,7 +292,7 @@ const MultilineInternal = () => {
           id="standard-multiline-flexible"
           label="Multiline"
           multiline
-          rowsMax={4}
+          maxRows={4}
           value={value}
           onChange={handleChange}
         />
@@ -303,7 +304,7 @@ const MultilineInternal = () => {
           id="filled-multiline-flexible"
           label="Multiline"
           multiline
-          rowsMax={4}
+          maxRows={4}
           value={value}
           onChange={handleChange}
           variant="filled"
@@ -329,7 +330,7 @@ const MultilineInternal = () => {
           id="outlined-multiline-flexible"
           label="Multiline"
           multiline
-          rowsMax={4}
+          maxRows={4}
           value={value}
           onChange={handleChange}
           variant="outlined"

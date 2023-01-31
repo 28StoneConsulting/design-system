@@ -1,11 +1,17 @@
-import { css, Global, ThemeProvider } from '@emotion/react';
-import CssBaseline from '@material-ui/core/CssBaseline/CssBaseline';
-import { MuiThemeProvider, StylesProvider } from '@material-ui/core/styles';
+import { css, Global, Theme } from '@emotion/react';
+import CssBaseline from '@mui/material/CssBaseline';
+import { StyledEngineProvider, ThemeProvider } from '@mui/material/styles';
+import { StylesProvider } from '@mui/styles';
 import { DocsContainer as BaseContainer } from '@storybook/addon-docs/blocks';
 import { themes } from '@storybook/theming';
 import React from 'react';
 import { useDarkMode } from 'storybook-dark-mode';
 import { darkTheme, lightTheme } from '../../src/shared/theme';
+
+declare module '@mui/styles/defaultTheme' {
+  // eslint-disable-next-line @typescript-eslint/no-empty-interface
+  interface DefaultTheme extends Theme {}
+}
 
 export const DocsContainer = ({ children, context }) => {
   const dark = useDarkMode();
@@ -15,7 +21,7 @@ export const DocsContainer = ({ children, context }) => {
     <>
       <Global styles={getGlobalStyle(theme)} />
       <StylesProvider injectFirst>
-        <MuiThemeProvider theme={theme}>
+        <StyledEngineProvider injectFirst>
           <CssBaseline />
           <ThemeProvider theme={theme}>
             <BaseContainer
@@ -33,7 +39,7 @@ export const DocsContainer = ({ children, context }) => {
               {children}
             </BaseContainer>
           </ThemeProvider>
-        </MuiThemeProvider>
+        </StyledEngineProvider>
       </StylesProvider>
     </>
   );

@@ -1,3 +1,17 @@
+# v1.0.19 (Tue Jan 31 2023)
+
+#### 🐛 Bug Fix
+
+- Add type:module in package.json [#57](https://github.com/28StoneConsulting/design-system/pull/57) ([@hjekabs](https://github.com/hjekabs))
+- Update node version in action [#56](https://github.com/28StoneConsulting/design-system/pull/56) ([@hjekabs](https://github.com/hjekabs))
+- Migration to v5 [#55](https://github.com/28StoneConsulting/design-system/pull/55) ([@hjekabs](https://github.com/hjekabs))
+
+#### Authors: 1
+
+- [@hjekabs](https://github.com/hjekabs)
+
+---
+
 # v1.0.18 (Wed May 25 2022)
 
 #### 🐛 Bug Fix

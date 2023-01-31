@@ -1,27 +1,27 @@
-import React from 'react';
+import { css, Global } from '@emotion/react';
 import CssBaseline from '@mui/material/CssBaseline/CssBaseline';
-import {  StylesProvider } from '@mui/styles';
-import {  ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
-import {  Global, css } from '@emotion/react';
+import { StyledEngineProvider, ThemeProvider } from '@mui/material/styles';
+import { StylesProvider } from '@mui/styles';
+import React from 'react';
 import { useDarkMode } from 'storybook-dark-mode';
-import { lightTheme, darkTheme } from '../../src/shared/theme';
+import { darkTheme, lightTheme } from '../../src/shared/theme';
 
 export default (storyFn, context) => {
-  const theme = useDarkMode() ? darkTheme : lightTheme
+  const theme = useDarkMode() ? darkTheme : lightTheme;
   const isInDocs = context.viewMode === 'docs';
-  
-  return isInDocs ? storyFn() : (
-  <>
-    <Global styles={getGlobalStyle(theme)} />
-    <StylesProvider injectFirst>
-      <StyledEngineProvider injectFirst>
-      <CssBaseline />
-        <ThemeProvider theme={theme}>
-            {storyFn()}
-        </ThemeProvider>
-      </StyledEngineProvider>
-    </StylesProvider>
-  </>
+
+  return isInDocs ? (
+    storyFn()
+  ) : (
+    <>
+      <Global styles={getGlobalStyle(theme)} />
+      <StylesProvider injectFirst>
+        <StyledEngineProvider injectFirst>
+          <CssBaseline />
+          <ThemeProvider theme={theme}>{storyFn()}</ThemeProvider>
+        </StyledEngineProvider>
+      </StylesProvider>
+    </>
   );
 };
 

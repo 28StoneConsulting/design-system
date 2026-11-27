@@ -1,4 +1,10 @@
-import { BrandColors, Components, createTheme, MonochromeColors, ThemeOptions } from '@mui/material/styles';
+import {
+  createTheme,
+  type BrandColors,
+  type Components,
+  type MonochromeColors,
+  type ThemeOptions,
+} from '@mui/material/styles';
 import { deepMerge } from '../utils/deep-merge';
 
 declare module '@mui/material/styles' {

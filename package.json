@@ -82,7 +82,7 @@
     "@types/react-dom": "^18.0.10",
     "@typescript-eslint/eslint-plugin": "^5.49.0",
     "@typescript-eslint/parser": "^5.49.0",
-    "auto": "^10.37.6",
+    "auto": "^11.3.6",
     "chromatic": "^6.15.0",
     "cross-env": "^7.0.3",
     "eslint": "^8.33.0",

@@ -117,5 +117,9 @@
   },
   "repository": "git@github.com:28stoneconsulting/design-system.git",
   "author": "Alexey Valner <avalner@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "publishConfig": {
+   "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  }
 }

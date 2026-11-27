@@ -1,3 +1,19 @@
+# v2.0.2 (Fri Nov 27 2026)
+
+#### 🐛 Bug Fix
+
+- publishConfig changes [#62](https://github.com/28StoneConsulting/design-system/pull/62) ([@artjomsskurjats](https://github.com/artjomsskurjats))
+- NPM_CONFIG_REGISTRY change [#61](https://github.com/28StoneConsulting/design-system/pull/61) ([@artjomsskurjats](https://github.com/artjomsskurjats))
+- Auto version bump [#60](https://github.com/28StoneConsulting/design-system/pull/60) ([@artjomsskurjats](https://github.com/artjomsskurjats))
+- Workflow version bumps [#59](https://github.com/28StoneConsulting/design-system/pull/59) ([@artjomsskurjats](https://github.com/artjomsskurjats))
+- Import type fix [#58](https://github.com/28StoneConsulting/design-system/pull/58) ([@artjomsskurjats](https://github.com/artjomsskurjats))
+
+#### Authors: 1
+
+- [@artjomsskurjats](https://github.com/artjomsskurjats)
+
+---
+
 # v1.0.19 (Tue Jan 31 2023)
 
 #### 🐛 Bug Fix
